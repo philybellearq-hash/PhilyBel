@@ -3,7 +3,7 @@
     --background-color: #fff;
     --arrow-color: #FFD700; 
     /* ✅ FIXED: New Font Family */
-    --font-family: "Hanken Grotesk", sans-serif; 
+    --font-family: "Noto Sans Display", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
 }
