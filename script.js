@@ -1,30 +1,25 @@
-// Placeholder data for the slideshow (only one project is visible)
-const projects = [
-    {
-        image: '1.jpg',
-        number: '061: OASIS',
-        description: 'Competition entry for a mixed use public campus, Renens, 1st prize !',
-        collaboration: 'With Coralie Berchtold and Yann Junod, 2022-29'
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentSlide = 0;
+
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        currentSlide = (n + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
     }
-];
 
-let currentProjectIndex = 0;
+    prevButton.addEventListener('click', () => {
+        showSlide(currentSlide - 1);
+    });
 
-// Function to update the image source
-function updateProjectImage() {
-    const project = projects[currentProjectIndex];
-    document.getElementById('project-image').src = project.image;
-    console.log(`Displaying Project Image: ${project.image}`);
-}
+    nextButton.addEventListener('click', () => {
+        showSlide(currentSlide + 1);
+    });
 
-// Function to handle arrow navigation
-function navigateSlide(direction) {
-    currentProjectIndex = (currentProjectIndex + direction + projects.length) % projects.length;
-    updateProjectImage();
-    console.log(`Mapsd. New index: ${currentProjectIndex}. Content is currently static as only one image is available.`);
-}
-
-// Initial image display on page load
-document.addEventListener('DOMContentLoaded', () => {
-    updateProjectImage();
+    // Auto-advance slides every 5 seconds
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
 });
