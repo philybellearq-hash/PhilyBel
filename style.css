@@ -5,7 +5,7 @@
     --font-family: "BBH Sans Hegarty", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
-    --image-content-width: 700px; /* New fixed max width for image/text block */
+    /* Removed --image-content-width as we will use dynamic sizing */
 }
 
 /* --- Global Reset and Typography --- */
@@ -16,7 +16,8 @@
 }
 
 body {
-    /* Font is applied here using the link in the HTML head */
+    /* Set min-height to 100vh to define the viewport area for "no scroll" logic */
+    min-height: 100vh;
     font-family: var(--font-family); 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -24,12 +25,15 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
+    /* Prevents vertical scroll bar unless content is explicitly larger than viewport */
+    overflow-y: hidden; 
 }
 
-/* ✅ FIX: Apply font to all common elements and ensure text color is black */
+/* ✅ FIX: Apply font to all common elements & ensure no text decoration (underlining) on links */
 a, p, h1, h2, h3, div, span {
     font-family: var(--font-family) !important; 
-    color: var(--text-color) !important; /* Force all text to be black */
+    color: var(--text-color) !important; 
+    text-decoration: none !important; /* FIX: Remove underlining from all links/headers */
 }
 
 /* --- Header & Grid (Applies to both pages) --- */
@@ -37,79 +41,95 @@ a, p, h1, h2, h3, div, span {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
-    min-height: calc(100vh - 2 * var(--padding-sides));
+    /* Use calc() to make the grid fit exactly within the available vertical space */
+    height: calc(100vh - 2 * var(--padding-sides)); 
     max-width: var(--max-content-width);
-    margin: 0 auto; /* Center the entire main content grid */
+    margin: 0 auto;
 }
 
 .home__header {
     padding-top: 10px; 
-    padding-bottom: 50px;
+    padding-bottom: 30px; /* Reduced header padding to save vertical space */
+    /* Ensure the header link text is not underlined */
+    text-decoration: none; 
 }
 
 .title_link a {
     font-size: 1.2em;
     font-weight: 700; 
     display: inline-block;
+    text-decoration: none; /* FIX: Double check link has no decoration */
 }
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (FIXED ALIGNMENT AND SIZE) --- */
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (NO SCROLL FIX) --- */
 
 .home__slider {
     display: flex;
     justify-content: center; 
     width: 100%;
+    /* Use flex-grow to ensure the slider takes all remaining vertical space */
+    flex-grow: 1; 
 }
 
 .slider__container {
     width: 100%;
+    /* Use Flexbox to ensure the content inside can shrink */
+    display: flex; 
+    align-items: center; /* Vertically centers the wrapper */
+    justify-content: center;
 }
 
 .slider__wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
+    /* Set a max-height relative to the viewport for the "no scroll" fix */
+    max-height: 100%; 
+    overflow: hidden; /* Prevent scrolling within the wrapper */
 }
 
 .slider__slide {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the whole block (image + text) */
+    align-items: center; 
     width: 100%;
+    /* Allow the slide to shrink to fit the wrapper's max-height */
+    max-height: 100%; 
 }
 
 .slide__img {
     width: 100%; 
     display: flex;
     justify-content: center;
+    flex-shrink: 1; /* Allow the image container to shrink */
 }
 
 .slide__img img {
     display: block;
-    /* ✅ FIXED: Use a fixed max-width for better control and re-center the image */
-    width: 100%; 
-    max-width: var(--image-content-width) !important; /* Image size fixed to 700px max */
-    height: auto;
-    margin-bottom: 30px;
+    /* ✅ FIXED: Image height is now limited by the remaining screen space */
+    max-height: calc(100vh - 200px) !important; /* Dynamic height based on screen, accounting for header/padding */
+    width: auto !important; /* Allow width to scale proportionally to height */
+    max-width: 80% !important; /* Ensure image isn't too wide on large screens */
+    margin-bottom: 20px; /* Reduced margin to save vertical space */
     object-fit: contain;
 }
 
 /* Project Text Description (Aligned with image) */
 .slide__txt {
-    /* ✅ FIXED: Text width now matches the image's max-width for alignment */
-    width: 100%; 
-    max-width: var(--image-content-width); 
+    width: 80%; 
+    max-width: 700px; /* Kept a max width for large screens */
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
+    flex-shrink: 0; /* Text block should not shrink */
 }
 .slide__txt p {
     margin: 0;
     padding: 0;
 }
 
-/* --- FIXED: ARROW STYLING & POSITIONING (Yellow and Bigger, not massive) --- */
+/* --- ARROW STYLING (Yellow and Bigger) --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -119,9 +139,8 @@ a, p, h1, h2, h3, div, span {
     border: none;
     padding: 0; 
     cursor: pointer;
-    /* ✅ FIXED: Arrow size is now 3em (big, but not overly massive) */
     font-size: 3em; 
-    color: var(--arrow-color); /* Yellow color */
+    color: var(--arrow-color); 
     opacity: 0.8; 
     transition: opacity 0.2s;
     z-index: 99; 
@@ -132,7 +151,7 @@ a, p, h1, h2, h3, div, span {
     justify-content: center;
     line-height: 1;
     font-family: inherit; 
-    font-weight: 700; /* Makes the arrow symbol thicker */
+    font-weight: 700;
 }
 
 /* Position arrows relative to the body padding */
@@ -155,34 +174,13 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
-/* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Font is now globally fixed) --- */
+/* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
 .about__content {
     display: flex;
     gap: 80px; 
     padding-bottom: 50px;
-    max-width: 1000px; /* Gives structure to the about page content */
+    max-width: 1000px; 
     margin: 0 auto; 
 }
-
-.about__contact {
-    flex: 0 0 300px; 
-    display: flex;
-    flex-direction: column;
-}
-
-.studio-title {
-    font-size: 1.2em; 
-    font-weight: 700 !important; /* Ensure bold applies correctly */
-    margin-bottom: 5px; 
-}
 /* ... rest of the about styles ... */
-.project-number {
-    font-weight: 700 !important; 
-    display: inline;
-}
-
-.highlight {
-    font-weight: 700 !important;
-    font-style: italic; 
-}
