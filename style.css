@@ -1,4 +1,4 @@
-/* --- NO @import HERE. IT IS NOW IN THE HTML FILES --- */
+/* --- Google Font Import (kept via HTML link) --- */
 
 :root {
     --text-color: #000;
@@ -17,7 +17,6 @@
 }
 
 body {
-    /* Apply the new font, using the link in the HTML head */
     font-family: var(--font-family); 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -34,31 +33,150 @@ a {
 
 /* --- Header Styles (Applies to both pages) --- */
 
-/* ... other header styles remain the same ... */
+.home__grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: calc(100vh - 2 * var(--padding-sides));
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    position: relative; /* Anchor for absolute arrows */
+}
+
+.home__header {
+    padding-top: 10px; 
+    padding-bottom: 50px;
+}
 
 .title_link a {
     font-size: 1.2em;
-    font-weight: 700; /* Ensure the bold weight is used */
+    font-weight: 700; 
     display: inline-block;
 }
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT --- */
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (FIXED CENTERING) --- */
 
-/* Navigation Arrows */
+.home__slider {
+    display: flex;
+    justify-content: center; /* Center the entire slider area */
+    width: 100%;
+    position: relative;
+}
+
+.slider__container {
+    width: 100%;
+}
+
+.slider__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+}
+
+.slider__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* THIS CENTERS THE IMAGE AND TEXT BLOCK */
+    width: 100%;
+}
+
+.slide__img {
+    display: flex; /* Helps center the image if it's smaller than 80% */
+    justify-content: center;
+    width: 100%; /* Allows the image to center within the column */
+}
+
+.slide__img img {
+    display: block;
+    width: 80%; /* Centered and not full-screen */
+    max-width: 900px; /* Optional: cap maximum size */
+    height: auto;
+    margin-bottom: 30px;
+    object-fit: contain;
+}
+
+/* Project Text Description (Left Aligned below image) */
+.slide__txt {
+    width: 80%; /* Match the width of the image */
+    max-width: 900px; /* Optional: cap maximum size */
+    text-align: left; 
+    font-size: 1em; 
+    line-height: 1.6;
+}
+.slide__txt p {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- FIXED: ARROW STYLING & POSITIONING --- */
+
 .slider__prev, .slider__next {
+    /* Base style from the code you provided, but minimalized for the reference image */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2.5em; /* Increased size to match the reference look */
+    background: none; /* Removed background */
+    border: none;
+    padding: 0; /* Remove padding */
     cursor: pointer;
-    /* --- FIXED: Blue color applied directly --- */
-    color: var(--arrow-color); 
+    font-size: 3em; /* Larger size to match reference */
+    color: var(--arrow-color); /* Blue color */
     opacity: 0.8; 
     transition: opacity 0.2s;
-    user-select: none;
     z-index: 10;
-    font-weight: 700; /* Arrows should be bold too */
-    line-height: 1; /* Stops the arrow from affecting layout too much */
+    width: 50px; /* Give it a click area */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: inherit; /* Inherit the correct font */
 }
 
-/* ... all other CSS remains the same and should now function correctly ... */
+/* Add the actual arrow symbols using CSS pseudo-elements */
+.slider__prev:before {
+    content: '<';
+}
+.slider__next:before {
+    content: '>';
+}
+
+.slider__prev:hover, .slider__next:hover {
+    opacity: 1;
+}
+
+.slider__prev { 
+    left: -70px; /* Pushed outside the main content block slightly */
+}
+.slider__next { 
+    right: -70px; /* Pushed outside the main content block slightly */
+}
+
+/* Adjusting arrow position for smaller screens */
+@media (max-width: 1200px) {
+    .slider__prev { left: 0; }
+    .slider__next { right: 0; }
+}
+
+/* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Unchanged) --- */
+/* ... all other CSS for about.html remains the same ... */
+
+.about__content {
+    display: flex;
+    gap: 80px; 
+    padding-bottom: 50px;
+}
+
+.about__contact {
+    flex: 0 0 300px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.studio-title {
+    font-size: 1.2em; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+/* ... rest of the about styles ... */
