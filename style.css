@@ -1,10 +1,11 @@
 :root {
     --text-color: #000;
     --background-color: #fff;
-    --arrow-color: #FFD700; /* FIXED: Standard Yellow Arrow Color */
+    --arrow-color: #FFD700; /* Standard Yellow Arrow Color */
     --font-family: "BBH Sans Hegarty", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
+    --image-content-width: 700px; /* New fixed max width for image/text block */
 }
 
 /* --- Global Reset and Typography --- */
@@ -25,9 +26,10 @@ body {
     position: relative;
 }
 
-/* ✅ FIX: Apply font to all common elements to ensure About page is correct */
+/* ✅ FIX: Apply font to all common elements and ensure text color is black */
 a, p, h1, h2, h3, div, span {
-    font-family: var(--font-family) !important; /* Added !important for guaranteed font application */
+    font-family: var(--font-family) !important; 
+    color: var(--text-color) !important; /* Force all text to be black */
 }
 
 /* --- Header & Grid (Applies to both pages) --- */
@@ -37,7 +39,7 @@ a, p, h1, h2, h3, div, span {
     grid-template-rows: auto 1fr;
     min-height: calc(100vh - 2 * var(--padding-sides));
     max-width: var(--max-content-width);
-    margin: 0 auto;
+    margin: 0 auto; /* Center the entire main content grid */
 }
 
 .home__header {
@@ -51,7 +53,7 @@ a, p, h1, h2, h3, div, span {
     display: inline-block;
 }
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (IMAGE SIZE FIX) --- */
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (FIXED ALIGNMENT AND SIZE) --- */
 
 .home__slider {
     display: flex;
@@ -73,7 +75,7 @@ a, p, h1, h2, h3, div, span {
 .slider__slide {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center; /* Centers the whole block (image + text) */
     width: 100%;
 }
 
@@ -85,18 +87,19 @@ a, p, h1, h2, h3, div, span {
 
 .slide__img img {
     display: block;
-    /* ✅ FIXED: Image width is now 40% of its container (50% smaller) */
-    width: 40% !important; 
-    max-width: 450px !important; /* Overriding with !important for guarantee */
+    /* ✅ FIXED: Use a fixed max-width for better control and re-center the image */
+    width: 100%; 
+    max-width: var(--image-content-width) !important; /* Image size fixed to 700px max */
     height: auto;
     margin-bottom: 30px;
     object-fit: contain;
 }
 
-/* Project Text Description (Left Aligned below image) */
+/* Project Text Description (Aligned with image) */
 .slide__txt {
-    width: 40%; 
-    max-width: 450px; 
+    /* ✅ FIXED: Text width now matches the image's max-width for alignment */
+    width: 100%; 
+    max-width: var(--image-content-width); 
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
@@ -106,7 +109,7 @@ a, p, h1, h2, h3, div, span {
     padding: 0;
 }
 
-/* --- FIXED: ARROW STYLING & POSITIONING (Yellow and 3x Bigger) --- */
+/* --- FIXED: ARROW STYLING & POSITIONING (Yellow and Bigger, not massive) --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -116,8 +119,8 @@ a, p, h1, h2, h3, div, span {
     border: none;
     padding: 0; 
     cursor: pointer;
-    /* ✅ FIXED: 3x Bigger arrows (2.5em * 3 = 7.5em) */
-    font-size: 7.5em; 
+    /* ✅ FIXED: Arrow size is now 3em (big, but not overly massive) */
+    font-size: 3em; 
     color: var(--arrow-color); /* Yellow color */
     opacity: 0.8; 
     transition: opacity 0.2s;
@@ -129,7 +132,7 @@ a, p, h1, h2, h3, div, span {
     justify-content: center;
     line-height: 1;
     font-family: inherit; 
-    font-weight: 700;
+    font-weight: 700; /* Makes the arrow symbol thicker */
 }
 
 /* Position arrows relative to the body padding */
@@ -152,12 +155,14 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
-/* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
+/* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Font is now globally fixed) --- */
 
 .about__content {
     display: flex;
     gap: 80px; 
     padding-bottom: 50px;
+    max-width: 1000px; /* Gives structure to the about page content */
+    margin: 0 auto; 
 }
 
 .about__contact {
@@ -168,7 +173,16 @@ a, p, h1, h2, h3, div, span {
 
 .studio-title {
     font-size: 1.2em; 
-    font-weight: bold; 
+    font-weight: 700 !important; /* Ensure bold applies correctly */
     margin-bottom: 5px; 
 }
 /* ... rest of the about styles ... */
+.project-number {
+    font-weight: 700 !important; 
+    display: inline;
+}
+
+.highlight {
+    font-weight: 700 !important;
+    font-style: italic; 
+}
