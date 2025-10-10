@@ -1,138 +1,147 @@
-:root {
-    --text-color: #000;
-    --background-color: #fff;
-    --font-family: Arial, sans-serif; /* Clean, minimalist font */
-    --max-width: 1400px;
-    --padding-sides: 40px;
-}
-
-/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.4;
-    padding: var(--padding-sides);
-    padding-top: 30px; 
-    font-size: 16px; 
-}
-
-/* Header (Studio Name) - Applies to both pages */
-.header {
-    margin-bottom: 50px;
-    max-width: var(--max-width);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0; 
-}
-
-.studio-name {
-    font-size: 1.2em;
-    font-weight: bold; /* --- FIXED: BOLD HEADER TEXT --- */
-    text-decoration: none;
-    color: var(--text-color);
-    display: block; 
-}
-
-/* --- ABOUT.HTML Styles (Two-Column Layout) --- */
-
-.content-container {
-    display: flex;
-    gap: 80px; 
-    max-width: var(--max-width);
-    margin: 0 auto; 
-}
-
-/* Left Column: Contact Info */
-.contact-info {
-    flex: 0 0 300px; 
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 50px; 
 }
 
-.studio-title {
-    font-size: 1.2em; 
-    margin-bottom: 5px; 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
 }
-/* ... other contact styles omitted for brevity, they remain correct ... */
 
-/* --- INDEX.HTML Styles (Slideshow Layout) --- */
+.logo {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #333;
+}
 
-.slideshow-page-content {
-    /* Ensures content alignment matches the about page's max-width/centering */
-    max-width: var(--max-width);
-    margin: 0 auto;
+.logo:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 .slideshow-container {
     position: relative;
-    display: flex;
-    align-items: flex-start; 
-    margin-bottom: 50px; 
-    min-height: 60vh; 
-}
-
-.slide-content {
+    max-width: 800px;
+    margin: 0 auto;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* Removed align-items: center; to allow image and text to align left relative to the arrows */
-    max-width: 100%;
-    
-    /* Center the *content block* within the slideshow area */
-    align-items: center; 
+    justify-content: center;
 }
 
-.project-image {
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide.active {
     display: block;
-    width: 80%; /* Centered and not full-screen */
-    height: auto;
-    margin-bottom: 30px;
 }
 
-/* Navigation Arrows */
-.nav-arrow {
+.slide-image {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.slide-content {
+    padding: 0 20px;
+}
+
+.slide-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.slide-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.slide-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.arrow {
     background: none;
     border: none;
-    color: var(--text-color);
-    font-size: 2em; 
+    font-size: 40px;
     cursor: pointer;
-    padding: 0 10px;
-    align-self: flex-start; 
-    margin-top: 15vw; 
-    z-index: 10;
-    transition: opacity 0.2s;
-    opacity: 0.5; 
+    color: #333;
+    padding: 0 20px;
+    transition: color 0.3s;
 }
 
-/* Project Details (Below Image) - Shared styles */
-.project-details {
-    width: 80%; /* Match the width of the image */
-    text-align: left; /* --- FIXED: LEFT ALIGNED TEXT --- */
-    margin-left: 0; /* Override any centering default */
+.arrow:hover {
+    color: #666;
 }
 
-/* Shared typography styles below (remain correct) */
-
-.project-number {
-    font-weight: bold; 
-    display: inline;
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+    color: #999;
+    font-size: 14px;
 }
 
-.highlight {
-    font-weight: bold;
-    font-style: italic; 
-}
-
-.highlight-link {
-    font-weight: bold;
-    text-decoration: underline; 
-    cursor: pointer;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 0 15px;
+    }
 }
