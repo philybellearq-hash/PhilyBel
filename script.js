@@ -3,23 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
     let currentSlide = 0;
-
-    function showSlide(n) {
+    
+    function showSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
+        slides[index].classList.add('active');
+        currentSlide = index;
     }
-
-    prevButton.addEventListener('click', () => {
-        showSlide(currentSlide - 1);
+    
+    prevButton.addEventListener('click', function() {
+        let newIndex = currentSlide - 1;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        showSlide(newIndex);
     });
-
-    nextButton.addEventListener('click', () => {
-        showSlide(currentSlide + 1);
+    
+    nextButton.addEventListener('click', function() {
+        let newIndex = currentSlide + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        showSlide(newIndex);
     });
-
-    // Optional: Auto-advance slides every 5 seconds
-    setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
+    
+    // Initialize the first slide
+    showSlide(0);
 });
