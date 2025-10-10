@@ -1,11 +1,11 @@
 :root {
     --text-color: #000;
     --background-color: #fff;
-    --arrow-color: #FFD700; /* Standard Yellow Arrow Color */
-    --font-family: "BBH Sans Hegarty", sans-serif; 
+    --arrow-color: #FFD700; 
+    /* ✅ FIXED: New Font Family */
+    --font-family: "Hanken Grotesk", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
-    /* Removed --image-content-width as we will use dynamic sizing */
 }
 
 /* --- Global Reset and Typography --- */
