@@ -5,20 +5,39 @@ body {
   color: #111;
   min-height: 100vh;
   position: relative;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
+/* Title styles */
+.main-title-link {
+  text-decoration: none;
+  color: inherit;
+}
 .main-title {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  margin: 20px 0 0 15px;
-  letter-spacing: -2px;
+  margin: 32px 0 0 32px;
+  letter-spacing: -1px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.center-image-container {
+/* Centered image styles */
+.main-content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 40px;
+  margin-top: 32px;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.slideshow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-image {
@@ -27,39 +46,77 @@ body {
   height: auto;
   display: block;
   background: #eee;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+  cursor: pointer;
 }
 
-.project-info {
+/* Arrows */
+.arrow {
   position: absolute;
-  left: 15px;
-  bottom: 30px;
-  font-size: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.5);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 2.2rem;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.arrow:hover {
+  background: rgba(255,255,255,0.9);
+}
+.arrow.left { left: -48px; }
+.arrow.right { right: -48px; }
+
+/* Project info at bottom left */
+.project-info {
+  position: fixed;
+  left: 32px;
+  bottom: 32px;
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.25;
+  color: #111;
+  max-width: 700px;
+  z-index: 10;
 }
 
 .project-title {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
+  margin-bottom: 0.3em;
 }
 
 .project-desc {
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 500;
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
+/* Responsive adjustments for mobile */
+@media (max-width: 800px) {
+  .main-title {
+    font-size: 2rem;
+    margin: 18px 0 0 12px;
+  }
+  .main-content {
+    margin-top: 18px;
+  }
   .main-image {
     max-width: 98vw;
   }
+  .arrow.left { left: -18px; }
+  .arrow.right { right: -18px; }
   .project-info {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     left: 10px;
-    bottom: 18px;
+    bottom: 12px;
+    max-width: 96vw;
   }
-  .main-title {
-    font-size: 2rem;
-    margin-left: 10px;
+  .project-title {
+    font-size: 1.1rem;
+  }
+  .project-desc {
+    font-size: 0.95rem;
   }
 }
