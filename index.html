@@ -4,155 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHILYBEL</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            margin-bottom: 30px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: normal;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .logo:hover {
-            text-decoration: underline;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav li {
-            margin-left: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .slideshow-container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .slide {
-            display: none;
-            text-align: center;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        .slide-image {
-            max-width: 100%;
-            max-height: 70vh;
-            object-fit: contain;
-            margin-bottom: 20px;
-        }
-
-        .slide-content {
-            padding: 0 20px;
-        }
-
-        .slide-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: normal;
-        }
-
-        .slide-description {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .slide-date {
-            font-size: 14px;
-            color: #999;
-        }
-
-        .navigation {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-
-        .arrow {
-            background: none;
-            border: none;
-            font-size: 40px;
-            cursor: pointer;
-            color: #333;
-            padding: 0 20px;
-            transition: color 0.3s;
-        }
-
-        .arrow:hover {
-            color: #666;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 30px;
-            color: #999;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                margin-top: 15px;
-                justify-content: center;
-            }
-            
-            nav li {
-                margin: 0 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -184,4 +36,99 @@
                 <h2 class="slide-title">Project Two</h2>
                 <p class="slide-description">Description for project two</p>
                 <p class="slide-date">Date and collaborators</p>
-            </
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <img src="3.jpg" alt="Project Three" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Three</h2>
+                <p class="slide-description">Description for project three</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <img src="4.jpg" alt="Project Four" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Four</h2>
+                <p class="slide-description">Description for project four</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <img src="5.jpg" alt="Project Five" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Five</h2>
+                <p class="slide-description">Description for project five</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide">
+            <img src="6.jpg" alt="Project Six" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Six</h2>
+                <p class="slide-description">Description for project six</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide">
+            <img src="7.jpg" alt="Project Seven" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Seven</h2>
+                <p class="slide-description">Description for project seven</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 8 -->
+        <div class="slide">
+            <img src="8.jpg" alt="Project Eight" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Eight</h2>
+                <p class="slide-description">Description for project eight</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 9 -->
+        <div class="slide">
+            <img src="9.jpg" alt="Project Nine" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Nine</h2>
+                <p class="slide-description">Description for project nine</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <!-- Slide 10 -->
+        <div class="slide">
+            <img src="10.jpg" alt="Project Ten" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Ten</h2>
+                <p class="slide-description">Description for project ten</p>
+                <p class="slide-date">Date and collaborators</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PHILYBEL. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
