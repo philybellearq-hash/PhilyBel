@@ -1,7 +1,7 @@
 :root {
     --text-color: #000;
     --background-color: #fff;
-    --arrow-color: #0000FF; /* Blue Arrow Color */
+    --arrow-color: #FFFF00; /* Yellow Arrow Color */
     --font-family: "BBH Sans Hegarty", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
