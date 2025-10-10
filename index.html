@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PhilyBel</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHILYBEL</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a href="about.html" class="main-title-link">
-    <div class="main-title">PhilyBel</div>
-  </a>
-  <div class="main-content">
-    <div class="slideshow">
-      <img src="images/1.jpg" alt="OASIS project model" class="main-image" id="slide-image" />
-      <button class="arrow left" id="prev">&#10094;</button>
-      <button class="arrow right" id="next">&#10095;</button>
-    </div>
-  </div>
-  <div class="project-info" id="project-info">
-    <div class="project-title" id="project-title">061: OASIS</div>
-    <div class="project-desc" id="project-desc">
-      Competition entry for a mixed use public campus, Renens, 1st prize !<br>
-      With Coralie Berchtold and Yann Junod, 2022–29
-    </div>
-  </div>
-  <script src="script.js"></script>
+    <header>
+        <a href="about.html" class="logo">PHILYBEL</a>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="slideshow-container">
+        <div class="slide active">
+            <img src="1.jpg" alt="Project One" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project One: Urban Oasis</h2>
+                <p class="slide-description">A contemporary residential complex with integrated green spaces</p>
+                <p class="slide-date">Completed 2023</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1165&q=80" alt="Project Two" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Two: Coastal Retreat</h2>
+                <p class="slide-description">Sustainable beach house design with panoramic ocean views</p>
+                <p class="slide-date">In progress - Expected 2024</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Project Three" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">Project Three: Mountain Lodge</h2>
+                <p class="slide-description">Alpine-inspired architecture blending traditional and modern elements</p>
+                <p class="slide-date">Completed 2022</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PHILYBEL. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
