@@ -1,8 +1,7 @@
 :root {
     --text-color: #000;
     --background-color: #fff;
-    --link-highlight-color: #000; /* Original links appear as black text, underlined/bolded */
-    --font-family: Arial, sans-serif; /* A clean, simple font like Arial/Helvetica to match the minimalist feel */
+    --font-family: Arial, sans-serif; 
     --max-width: 1400px;
     --padding-sides: 40px;
 }
@@ -18,15 +17,18 @@ body {
     font-family: var(--font-family);
     color: var(--text-color);
     background-color: var(--background-color);
-    line-height: 1.4; /* Adjusted for better reading/spacing */
+    line-height: 1.4;
     padding: var(--padding-sides);
-    padding-top: 30px; /* Slightly more space at the very top */
-    font-size: 16px; /* Standard base font size */
+    padding-top: 30px; 
+    font-size: 16px; 
 }
 
 /* Header (Studio Name) */
 .header {
     margin-bottom: 50px;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .studio-name {
@@ -34,31 +36,27 @@ body {
     font-weight: normal;
     text-decoration: none;
     color: var(--text-color);
-    display: block; /* Ensures it takes up a line like in the reference */
+    display: block; 
 }
 
-/* Main Content Layout (Two Columns) */
+/* --- ABOUT.HTML (Two-Column Layout) --- */
+
 .content-container {
     display: flex;
-    gap: 80px; /* Space between the two main columns */
+    gap: 80px; 
     max-width: var(--max-width);
-    margin: 0 auto; /* Center the overall content block */
+    margin: 0 auto; 
 }
 
 .contact-info {
-    flex: 0 0 300px; /* Fixed width for the contact/links column */
+    flex: 0 0 300px; 
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Space between contact group and links */
+    gap: 50px; 
 }
 
-.project-area {
-    flex-grow: 1; /* Takes up the remaining space */
-}
-
-/* Contact Group Formatting (Left Column) */
+/* Contact Group Formatting */
 .studio-title {
-    /* PHILYBEL - Same size as header but under the first section */
     font-size: 1.2em; 
     margin-bottom: 5px; 
 }
@@ -68,40 +66,65 @@ body {
 }
 
 .address-line {
-    /* Small vertical space between address lines */
     margin-bottom: 2px;
 }
 
 .phone-number {
-    margin-top: 25px; /* Space above the phone number */
+    margin-top: 25px; 
 }
 
 .links .link-item {
-    margin-top: 5px; /* Space between the '→ mail' links */
+    margin-top: 5px; 
 }
 
-/* Slideshow Container */
+/* Projects List (Right Column) */
+.projects-list-section {
+    flex-grow: 1;
+    max-width: 800px; 
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: normal; 
+    margin-bottom: 20px;
+}
+
+.projects-list-section .project-entry {
+    margin-bottom: 35px; 
+    line-height: 1.4;
+    font-size: 1em;
+}
+
+/* --- INDEX.HTML (Slideshow Layout) --- */
+
+.slideshow-page-content {
+    /* Ensures the slideshow container centers below the header */
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
 .slideshow-container {
     position: relative;
     display: flex;
-    align-items: flex-start; /* Align slide-content to the top */
-    margin-bottom: 50px; /* Space below the image/slideshow */
+    align-items: flex-start; 
+    margin-bottom: 50px; 
+    min-height: 60vh; /* Give it enough height for the arrows to align */
 }
 
 .slide-content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the image within its flexible column */
+    align-items: center; 
     max-width: 100%;
 }
 
 .project-image {
     display: block;
-    width: 80%; /* Image is not full-screen, adjust this percentage as needed */
+    width: 75%; /* Slightly adjusted for a better centered look, keeping it non-full-screen */
     height: auto;
     margin-bottom: 30px;
-    border: none; /* Ensure no unwanted border */
+    border: none; 
 }
 
 /* Navigation Arrows */
@@ -109,50 +132,33 @@ body {
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 2em; /* Large size for arrows */
+    font-size: 2em; 
     cursor: pointer;
     padding: 0 10px;
-    align-self: flex-start; /* Align arrows to the top of the container */
-    margin-top: calc(200px); /* Adjust to visually center next to the image */
+    align-self: flex-start; 
+    margin-top: 15vw; /* Position arrows relative to the viewport height for centering next to the image */
     z-index: 10;
     transition: opacity 0.2s;
-    opacity: 0.5; /* Subtle arrows */
+    opacity: 0.5; 
 }
 
 .nav-arrow:hover {
     opacity: 1;
 }
 
-/* Project Details (Below Image) */
+/* Project Details (Below Image) - Shared styles with project list */
 .project-details {
-    width: 80%; /* Match the width of the image */
-    text-align: left; /* Project text starts on the left */
+    width: 75%; /* Match the width of the image */
+    text-align: left; 
 }
 
 .project-details .project-entry {
-    font-size: 1em; /* Ensure the text size is consistent */
+    font-size: 1em; 
     line-height: 1.6;
 }
 
-/* Projects List (Right Column below image) */
-.projects-list-section {
-    max-width: 800px; /* Control max width for better readability */
-}
-
-.section-title {
-    font-size: 1.2em;
-    font-weight: normal; /* Keep the header font weight consistent */
-    margin-bottom: 20px;
-}
-
-.projects-list-section .project-entry {
-    margin-bottom: 35px; /* Vertical space between projects in the list */
-    line-height: 1.4;
-    font-size: 1em;
-}
-
 .project-number {
-    font-weight: bold; /* Project numbers/titles are bold/darker in the reference */
+    font-weight: bold; 
     display: inline;
 }
 
@@ -161,18 +167,18 @@ body {
 }
 
 .project-collaboration {
-    margin-top: 5px; /* Small space above the collaboration line */
-    font-size: 0.9em; /* Slightly smaller for the collaboration line */
+    margin-top: 5px; 
+    font-size: 0.9em; 
 }
 
-/* Highlighting/Links - Mimicking the bold/underlined/italic style */
+/* Highlighting/Links */
 .highlight {
     font-weight: bold;
-    font-style: italic; /* The "1st prize !" looks italicized/highlighted */
+    font-style: italic; 
 }
 
 .highlight-link {
     font-weight: bold;
-    text-decoration: underline; /* Links in the reference look underlined/bold */
+    text-decoration: underline; 
     cursor: pointer;
 }
