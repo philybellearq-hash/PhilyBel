@@ -3,12 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comte/Meuwly</title>
-    <link rel="stylesheet" href="style.css">
+    <title>PHILYBEL</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .logo:hover {
+            text-decoration: underline;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li {
+            margin-left: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide-image {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .slide-content {
+            padding: 0 20px;
+        }
+
+        .slide-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .slide-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .slide-date {
+            font-size: 14px;
+            color: #999;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .arrow {
+            background: none;
+            border: none;
+            font-size: 40px;
+            cursor: pointer;
+            color: #333;
+            padding: 0 20px;
+            transition: color 0.3s;
+        }
+
+        .arrow:hover {
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 30px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <a href="about.html" class="logo">Comte/Meuwly</a>
+        <a href="about.html" class="logo">PHILYBEL</a>
         <nav>
             <ul>
                 <li><a href="projects.html">Projects</a></li>
@@ -19,43 +167,21 @@
     </header>
 
     <main class="slideshow-container">
+        <!-- Slide 1 -->
         <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1548611635-b6e7827d7d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="OASIS Project" class="slide-image">
+            <img src="1.jpg" alt="Project One" class="slide-image">
             <div class="slide-content">
-                <h2 class="slide-title">06: OASIS</h2>
-                <p class="slide-description">Competition entry for a mixed use public campus, Renens, 1st prize !</p>
-                <p class="slide-date">With Coralie Berchtold and Yann Junod, 2022-29</p>
+                <h2 class="slide-title">Project One</h2>
+                <p class="slide-description">Description for project one</p>
+                <p class="slide-date">Date and collaborators</p>
             </div>
         </div>
 
+        <!-- Slide 2 -->
         <div class="slide">
-            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1165&q=80" alt="Urban Garden" class="slide-image">
+            <img src="2.jpg" alt="Project Two" class="slide-image">
             <div class="slide-content">
-                <h2 class="slide-title">05: Urban Garden</h2>
-                <p class="slide-description">Sustainable community garden project in Lausanne</p>
-                <p class="slide-date">With Local Community, 2021-23</p>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Riverfront Development" class="slide-image">
-            <div class="slide-content">
-                <h2 class="slide-title">04: Riverfront Development</h2>
-                <p class="slide-description">Mixed-use development along the Rhône river</p>
-                <p class="slide-date">With City Planning Department, 2020-22</p>
-            </div>
-        </div>
-
-        <div class="navigation">
-            <button class="arrow prev">&#10094;</button>
-            <button class="arrow next">&#10095;</button>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Comte/Meuwly. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <h2 class="slide-title">Project Two</h2>
+                <p class="slide-description">Description for project two</p>
+                <p class="slide-date">Date and collaborators</p>
+            </
