@@ -1,5 +1,3 @@
-/* --- Google Font Import (kept via HTML link) --- */
-
 :root {
     --text-color: #000;
     --background-color: #fff;
@@ -17,6 +15,7 @@
 }
 
 body {
+    /* Font is applied here using the link in the HTML head */
     font-family: var(--font-family); 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -31,7 +30,7 @@ a {
     text-decoration: none;
 }
 
-/* --- Header Styles (Applies to both pages) --- */
+/* --- Header & Grid (Applies to both pages) --- */
 
 .home__grid {
     display: grid;
@@ -39,7 +38,6 @@ a {
     min-height: calc(100vh - 2 * var(--padding-sides));
     max-width: var(--max-content-width);
     margin: 0 auto;
-    position: relative; /* Anchor for absolute arrows */
 }
 
 .home__header {
@@ -57,40 +55,40 @@ a {
 
 .home__slider {
     display: flex;
-    justify-content: center; /* Center the entire slider area */
+    justify-content: center; /* Ensures the whole block is centered */
     width: 100%;
-    position: relative;
 }
 
 .slider__container {
     width: 100%;
+    position: relative; /* Container needs to be relative for arrow positioning */
 }
 
 .slider__wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    position: relative;
     width: 100%;
 }
 
 .slider__slide {
     display: flex;
     flex-direction: column;
-    align-items: center; /* THIS CENTERS THE IMAGE AND TEXT BLOCK */
+    /* This centers the image and text block within the slider area */
+    align-items: center; 
     width: 100%;
 }
 
 .slide__img {
-    display: flex; /* Helps center the image if it's smaller than 80% */
+    width: 100%; 
+    display: flex;
     justify-content: center;
-    width: 100%; /* Allows the image to center within the column */
 }
 
 .slide__img img {
     display: block;
-    width: 80%; /* Centered and not full-screen */
-    max-width: 900px; /* Optional: cap maximum size */
+    width: 80%; /* Image width set to 80% of its container */
+    max-width: 900px; 
     height: auto;
     margin-bottom: 30px;
     object-fit: contain;
@@ -99,7 +97,7 @@ a {
 /* Project Text Description (Left Aligned below image) */
 .slide__txt {
     width: 80%; /* Match the width of the image */
-    max-width: 900px; /* Optional: cap maximum size */
+    max-width: 900px; 
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
@@ -112,29 +110,37 @@ a {
 /* --- FIXED: ARROW STYLING & POSITIONING --- */
 
 .slider__prev, .slider__next {
-    /* Base style from the code you provided, but minimalized for the reference image */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: none; /* Removed background */
+    background: none; 
     border: none;
-    padding: 0; /* Remove padding */
+    padding: 0; 
     cursor: pointer;
-    font-size: 3em; /* Larger size to match reference */
+    font-size: 2.5em; 
     color: var(--arrow-color); /* Blue color */
     opacity: 0.8; 
     transition: opacity 0.2s;
     z-index: 10;
-    width: 50px; /* Give it a click area */
+    width: 50px; 
     height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    font-family: inherit; /* Inherit the correct font */
+    font-family: inherit; 
+    font-weight: 700;
 }
 
-/* Add the actual arrow symbols using CSS pseudo-elements */
+/* Arrows position on the absolute left/right of the slideshow container */
+.slider__prev { 
+    left: 0; 
+}
+.slider__next { 
+    right: 0; 
+}
+
+/* Arrow Symbols via CSS content */
 .slider__prev:before {
     content: '<';
 }
@@ -146,21 +152,7 @@ a {
     opacity: 1;
 }
 
-.slider__prev { 
-    left: -70px; /* Pushed outside the main content block slightly */
-}
-.slider__next { 
-    right: -70px; /* Pushed outside the main content block slightly */
-}
-
-/* Adjusting arrow position for smaller screens */
-@media (max-width: 1200px) {
-    .slider__prev { left: 0; }
-    .slider__next { right: 0; }
-}
-
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Unchanged) --- */
-/* ... all other CSS for about.html remains the same ... */
 
 .about__content {
     display: flex;
