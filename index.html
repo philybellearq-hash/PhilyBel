@@ -3,31 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHILYBEL | Projects</title>
+    <title>Comte/Meuwly</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <a href="about.html" class="studio-name">PHILYBEL</a>
+    <header>
+        <a href="about.html" class="logo">Comte/Meuwly</a>
+        <nav>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="slideshow-page-content">
-        <div class="slideshow-container">
-            <button class="nav-arrow prev" onclick="navigateSlide(-1)">&#8592;</button> 
+    <main class="slideshow-container">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1548611635-b6e7827d7d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="OASIS Project" class="slide-image">
             <div class="slide-content">
-                <img id="project-image" src="1.jpg" alt="Project Model Placeholder" class="project-image">
-                
-                <div class="project-details">
-                    <div class="project-entry">
-                        <span class="project-number">061: OASIS</span>
-                        <span class="project-description">Competition entry for a mixed use public campus, Renens, <span class="highlight">1st prize !</span></span>
-                        <div class="project-collaboration">With Coralie Berchtold and Yann Junod, 2022-29</div>
-                    </div>
-                </div>
+                <h2 class="slide-title">06: OASIS</h2>
+                <p class="slide-description">Competition entry for a mixed use public campus, Renens, 1st prize !</p>
+                <p class="slide-date">With Coralie Berchtold and Yann Junod, 2022-29</p>
             </div>
-            <button class="nav-arrow next" onclick="navigateSlide(1)">&#8594;</button> 
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1165&q=80" alt="Urban Garden" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">05: Urban Garden</h2>
+                <p class="slide-description">Sustainable community garden project in Lausanne</p>
+                <p class="slide-date">With Local Community, 2021-23</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Riverfront Development" class="slide-image">
+            <div class="slide-content">
+                <h2 class="slide-title">04: Riverfront Development</h2>
+                <p class="slide-description">Mixed-use development along the Rhône river</p>
+                <p class="slide-date">With City Planning Department, 2020-22</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
         </div>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Comte/Meuwly. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
