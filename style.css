@@ -107,18 +107,12 @@ a {
   font-size: 20px;
 }
 
-.slider__prev {
-    left: 0; 
+.prev:hover, .next:hover {
+  background: rgba(255,255,255,0.9);
 }
 
-.slider__next {
-    right: 0;
-}
-
-.slider__prev:hover, .slider__next:hover {
-    opacity: 1;
-}
-
+.prev { left: 10px; }
+.next { right: 10px; }
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
 .about__grid {
