@@ -1,7 +1,7 @@
 :root {
     --text-color: #000;
     --background-color: #fff;
-    --arrow-color: #FFFF00; /* Yellow Arrow Color */
+    --arrow-color: #FFD700; /* FIXED: Standard Yellow Arrow Color */
     --font-family: "BBH Sans Hegarty", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
@@ -25,12 +25,31 @@ body {
     position: relative;
 }
 
-/* 🔑 FIX: Apply font to all elements (not just A tags) to ensure About page is correct */
-a, p, h1, h2, h3, div {
-    font-family: var(--font-family); 
+/* ✅ FIX: Apply font to all common elements to ensure About page is correct */
+a, p, h1, h2, h3, div, span {
+    font-family: var(--font-family) !important; /* Added !important for guaranteed font application */
 }
 
-/* ... (rest of the header and grid styles are the same) ... */
+/* --- Header & Grid (Applies to both pages) --- */
+
+.home__grid {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-height: calc(100vh - 2 * var(--padding-sides));
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+}
+
+.home__header {
+    padding-top: 10px; 
+    padding-bottom: 50px;
+}
+
+.title_link a {
+    font-size: 1.2em;
+    font-weight: 700; 
+    display: inline-block;
+}
 
 /* --- INDEX.HTML: SLIDESHOW LAYOUT (IMAGE SIZE FIX) --- */
 
@@ -40,7 +59,23 @@ a, p, h1, h2, h3, div {
     width: 100%;
 }
 
-/* ... (slider__container, slider__wrapper, slider__slide styles are the same) ... */
+.slider__container {
+    width: 100%;
+}
+
+.slider__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.slider__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+}
 
 .slide__img {
     width: 100%; 
@@ -50,9 +85,9 @@ a, p, h1, h2, h3, div {
 
 .slide__img img {
     display: block;
-    /* ✅ FIXED: Image width is now 40% (50% smaller than the previous 80%) */
-    width: 40%; 
-    max-width: 450px; /* Reduced max-width for better control */
+    /* ✅ FIXED: Image width is now 40% of its container (50% smaller) */
+    width: 40% !important; 
+    max-width: 450px !important; /* Overriding with !important for guarantee */
     height: auto;
     margin-bottom: 30px;
     object-fit: contain;
@@ -60,7 +95,6 @@ a, p, h1, h2, h3, div {
 
 /* Project Text Description (Left Aligned below image) */
 .slide__txt {
-    /* ✅ FIXED: Text width matches the new image width */
     width: 40%; 
     max-width: 450px; 
     text-align: left; 
@@ -72,7 +106,7 @@ a, p, h1, h2, h3, div {
     padding: 0;
 }
 
-/* --- ARROW STYLING & POSITIONING (Unchanged from previous fix) --- */
+/* --- FIXED: ARROW STYLING & POSITIONING (Yellow and 3x Bigger) --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -82,13 +116,14 @@ a, p, h1, h2, h3, div {
     border: none;
     padding: 0; 
     cursor: pointer;
-    font-size: 2.5em; 
-    color: var(--arrow-color);
+    /* ✅ FIXED: 3x Bigger arrows (2.5em * 3 = 7.5em) */
+    font-size: 7.5em; 
+    color: var(--arrow-color); /* Yellow color */
     opacity: 0.8; 
     transition: opacity 0.2s;
     z-index: 99; 
-    width: 150px; 
-    height: 150px;
+    width: 50px; 
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,11 +153,22 @@ a, p, h1, h2, h3, div {
 }
 
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
-/* (Styles here are guaranteed to use the correct font now due to the global `a, p, h1, ...` selector) */
 
 .about__content {
     display: flex;
     gap: 80px; 
     padding-bottom: 50px;
+}
+
+.about__contact {
+    flex: 0 0 300px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.studio-title {
+    font-size: 1.2em; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
 }
 /* ... rest of the about styles ... */
