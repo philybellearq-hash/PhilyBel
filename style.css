@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
+/* 🔑 CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
 html {
     height: 100%;
 }
@@ -33,7 +33,7 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Default scroll is fine for about page */
+    /* Default is auto, which is safe for about page */
     overflow-y: auto; 
 }
 
@@ -45,7 +45,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     color: var(--text-color) !important; 
     text-decoration: none !important; 
     font-weight: 400 !important; 
-    /* Font clarity fixes */
     -webkit-font-smoothing: antialiased !important;
     -moz-osx-font-smoothing: grayscale !important;
 }
@@ -67,7 +66,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
-    /* FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
+    /* 🔑 FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
     overflow-y: hidden; 
 }
 
@@ -131,8 +130,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     min-height: 0;
     
-    /* 🔑 NEW FIX: Constrain the image container's maximum height */
-    /* This makes the image smaller and forces the text to be visible */
+    /* 🔑 Image Scaling Fix: Constrain max height to ensure space for text */
     max-height: 70%; 
 }
 
@@ -159,143 +157,4 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
-    /* Prevents text from shrinking, forcing the image to give space */
-    flex-shrink: 0; 
-}
-.slide__txt p {
-    margin: 0;
-    padding: 0;
-}
-
-/* --- ARROW STYLING --- */
-
-.slider__prev, .slider__next {
-    position: fixed; 
-    top: 50%;
-    transform: translateY(-50%);
-    background: none; 
-    border: none;
-    padding: 0; 
-    cursor: pointer;
-    font-size: 3em; 
-    color: var(--arrow-color); /* Yellow */
-    opacity: 0.8; 
-    transition: opacity 0.2s;
-    z-index: 99; 
-    width: 50px; 
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    font-family: inherit; 
-    font-weight: 700;
-}
-
-.slider__prev { 
-    left: var(--padding-sides); 
-}
-.slider__next { 
-    right: var(--padding-sides); 
-}
-
-.slider__prev:before {
-    content: '<';
-}
-.slider__next:before {
-    content: '>';
-}
-
-.slider__prev:hover, .slider__next:hover {
-    opacity: 1;
-}
-
----
-
-## About Page Specifics (Restored)
-
-/* Set the black background */
-body.about-page {
-    background-color: var(--dark-bg);
-    /* Ensures the about page content is visible and scrollable */
-    overflow-y: scroll !important; 
-    padding: var(--padding-sides); 
-}
-
-/* Force ALL text and links on the about page to be white */
-body.about-page a, 
-body.about-page p, 
-body.about-page h1, 
-body.about-page h2, 
-body.about-page h3, 
-body.about-page div, 
-body.about-page span {
-    color: var(--dark-text) !important;
-}
-
-/* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
-
-.about__content {
-    display: flex;
-    gap: 80px; 
-    padding-bottom: 50px;
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding-top: 50px; 
-}
-
-.about__contact {
-    flex: 0 0 300px; 
-    display: flex;
-    flex-direction: column;
-}
-
-.studio-title {
-    font-size: 1.2em; 
-    margin-bottom: 5px; 
-}
-
-.studio-subtitle {
-    margin-bottom: 30px; 
-}
-
-.address-line, .phone-number {
-    margin-bottom: 2px;
-}
-.phone-number {
-    margin-top: 25px; 
-}
-
-.links {
-    margin-top: 10px;
-}
-.links .link-item {
-    margin-top: 5px; 
-}
-
-/* Projects List (Right Column) */
-.projects-list-section {
-    flex-grow: 1;
-    max-width: 800px; 
-}
-
-.section-title {
-    font-size: 1.2em;
-    font-weight: 400 !important;
-    margin-bottom: 20px;
-}
-
-.project-entry {
-    margin-bottom: 35px; 
-    line-height: 1.4;
-    font-size: 1em;
-}
-
-/* Shared Highlighting/Typography */
-.project-number {
-    display: inline;
-}
-
-.highlight {
-    font-style: italic; 
-}
+    /* Prevents text from shrinking,
