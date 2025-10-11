@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
+/* 🔑 CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
 html {
     height: 100%;
 }
@@ -33,7 +33,7 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Default is auto/scroll for the browser, which is safe for About page */
+    /* Default is auto, which allows scrolling for the About page */
     overflow-y: auto; 
 }
 
@@ -136,11 +136,11 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: block;
     object-fit: contain;
 
-    /* 🔑 FINAL IMAGE FIX: Use MAX-HEIGHT and MAX-WIDTH only. */
+    /* 🔑 FINAL IMAGE FIX: Max constraints are key for aspect ratio preservation */
     max-height: 100%; 
     max-width: 100%; 
-    height: auto; /* Let height be derived from max-height */
-    width: auto; /* Let width be derived from max-width */
+    height: auto; 
+    width: auto; 
     
     min-height: 0; 
     flex-shrink: 1;
@@ -208,12 +208,11 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 
 ---
 
-## About Page Specifics (RESTORED)
+## About Page Specifics (STABLE RESTORE)
 
 /* Set the black background */
 body.about-page {
     background-color: var(--dark-bg);
-    /* No need for !important here, as default body is auto */
     overflow-y: scroll; 
     padding: var(--padding-sides); 
 }
