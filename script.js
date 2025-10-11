@@ -3,17 +3,17 @@ const projects = [
     {
         image: 'images/1.png',
         number: 'H62: FESTZELT',
-        details: 'Design for a 140 sqm off-grid timber house, R. Valparaíso, 2025 - ongoing. <br>Keywords: Climate buffer; Wood; Earth; Circular construction; Water'
+        details: 'Design for a 140 sqm off-grid timber house, R. Valparaíso, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
     },
     {
         image: 'images/2.jpg',
         number: 'BCN: BIODIVERSITY HUBS',
-        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with  <a href="#">FHAO and Sebastian Delgado</a> <br>Keywords: Trombé-Wall; Transspecies; Biodiversity; Adaptive Reuse'      
+        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with  <a href="#">FHAO and Sebastian Delgado</a> <br>Keywords: Trombé-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
     },
     {
         image: 'images/3.jpg',
         number: 'D32: INFANTE',
-        details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention; Low-cost strategies'
+        details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
         image: 'images/4.jpg',
@@ -22,8 +22,8 @@ const projects = [
     },
     {
         image: 'images/5.jpg',
-        number: '067: UPLIFT',
-        details: 'Transformation of an agricultural house, Neuchâtel, 2022-24, in collaboration with <a href="#">Marginalia</a>'
+        number: 'D42: MILLER',
+        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
         image: 'images/6.jpg',
@@ -37,8 +37,8 @@ const projects = [
     },
     {
         image: 'images/8.jpg',
-        number: '038: AREAL DEPOT DEUTWEG',
-        details: 'Conservation, extension and transformation of a former tram depot. Winterthur, 2021'
+        number: 'D42: MILLER',
+        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
         image: 'images/9.jpg',
