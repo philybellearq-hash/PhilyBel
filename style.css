@@ -85,22 +85,21 @@ a, p, h1, h2, h3, div, span {
     flex-grow: 1; 
 }
 
+/* CHANGE: Remove align-items: center */
 .slider__container {
     width: 100%;
     display: flex; 
-    /* 🔑 FIX: Align to start to allow content to use all space from the top */
-    align-items: flex-start; 
+    align-items: flex-start; /* WAS center */
     justify-content: flex-start;
-    /* Critical: Ensures container fills its parent's height */
     height: 100%; 
 }
 
+/* CHANGE: Remove align-items: center */
 .slider__wrapper {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start; /* FIX: Align to start */
+    align-items: flex-start; /* WAS center */
     width: 100%;
-    /* Critical: Ensures wrapper fills its parent's height */
     height: 100%; 
     max-height: 100%; 
     overflow: hidden;
@@ -117,14 +116,12 @@ a, p, h1, h2, h3, div, span {
     max-height: 100%; 
 }
 
+/* CHANGE: Remove min-height: 0; as it's redundant when height is 100% */
 .slide__img {
     width: 100%; 
     display: flex;
     justify-content: center;
-    /* Allows image to shrink vertically */
     flex-shrink: 1; 
-    min-height: 0; 
-}
 
 .slide__img img {
     display: block;
