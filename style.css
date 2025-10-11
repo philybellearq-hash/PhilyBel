@@ -28,30 +28,20 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    overflow-y: scroll; 
-    
-    /* 🔑 FIX: FORCE SHARPER FONT RENDERING */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    
+    overflow-y: scroll; /* Allow scrolling on the About page */
+}
+
 /* Apply font and ensure no underline/color conflicts */
-/* 🔑 FIXED: Exclude button classes from the global ALL TEXT selector */
-a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
+a, p, h1, h2, h3, div, span {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
     text-decoration: none !important; 
-    font-weight: 400 !important; 
-    /* FORCE SHARPER FONT RENDERING ON ALL TEXT ELEMENTS */
-    -webkit-font-smoothing: antialiased !important;
-    -moz-osx-font-smoothing: grayscale !important;
+    font-weight: 400 !important; /* Default regular weight */
 }
-
-/* 🔑 Ensure the elements that should be bold are specifically targeted
 /* Ensure elements that should be bold are 700 */
 .title_link a, .slider__prev, .slider__next, .studio-title, .project-number, .highlight {
-    font-weight: 400 !important; 
+    font-weight: 700 !important; 
 }
-
 
 /* --- Header & Grid (Applies to both pages) --- */
 
