@@ -19,7 +19,6 @@
 }
 
 body {
-    /* Set min-height to 100vh for "no scroll" logic on landing page */
     min-height: 100vh;
     font-family: var(--font-family); 
     color: var(--text-color);
@@ -75,28 +74,34 @@ a, p, h1, h2, h3, div, span {
 }
 
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (NO SCROLL / ALIGNMENT FIXES) --- */
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (FINAL NO SCROLL FIX) --- */
 
 .home__slider {
     display: flex;
-    /* Left-aligns the whole slider block */
     justify-content: flex-start; 
     width: 100%;
+    /* Critical: Ensures slider takes all vertical space left by the header */
+    height: 100%;
     flex-grow: 1; 
 }
 
 .slider__container {
     width: 100%;
     display: flex; 
-    align-items: center; 
+    /* 🔑 FIX: Align to start to allow content to use all space from the top */
+    align-items: flex-start; 
     justify-content: flex-start;
+    /* Critical: Ensures container fills its parent's height */
+    height: 100%; 
 }
 
 .slider__wrapper {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start; /* FIX: Align to start */
     width: 100%;
+    /* Critical: Ensures wrapper fills its parent's height */
+    height: 100%; 
     max-height: 100%; 
     overflow: hidden;
 }
@@ -104,10 +109,9 @@ a, p, h1, h2, h3, div, span {
 .slider__slide {
     display: flex;
     flex-direction: column;
-    /* Left-aligns content blocks (image container, text block) */
     align-items: flex-start; 
     width: 100%;
-    /* Key for dynamic shrinking */
+    /* Key for dynamic shrinking - uses all inherited height */
     height: 100%; 
     min-height: 0; 
     max-height: 100%; 
@@ -115,7 +119,6 @@ a, p, h1, h2, h3, div, span {
 
 .slide__img {
     width: 100%; 
-    /* Overrides parent flex-start and centers the image within the slide */
     display: flex;
     justify-content: center;
     /* Allows image to shrink vertically */
@@ -136,7 +139,6 @@ a, p, h1, h2, h3, div, span {
 
 /* Project Text Description */
 .slide__txt {
-    /* Text block is left-aligned and its width is set */
     width: 80%; 
     max-width: 700px;
     text-align: left; 
