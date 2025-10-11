@@ -18,13 +18,12 @@
     box-sizing: border-box;
 }
 
-/* 🔑 CRITICAL: Ensure HTML height is strictly 100% of the viewport */
+/* CRITICAL: Ensure HTML height is strictly 100% of the viewport */
 html {
     height: 100%;
 }
 
 body {
-    /* Height is derived from 100% of the HTML element */
     min-height: 100%; 
     font-family: var(--font-family); 
     color: var(--text-color);
@@ -33,13 +32,10 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Default is auto, which is safe for about page */
     overflow-y: auto; 
 }
 
 /* --- Global Typography and Font Weights --- */
-
-/* Apply font and ensure no underline/color conflicts */
 a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
@@ -49,7 +45,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     -moz-osx-font-smoothing: grayscale !important;
 }
 
-/* Ensure elements that should be bold are 700 */
 .title_link a, 
 .studio-title, 
 .project-number, 
@@ -62,7 +57,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
-    /* Sets the height of the grid to fit screen */
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
@@ -159,7 +153,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
-    /* Prevents text from shrinking, forcing the image to give space */
     flex-shrink: 0; 
 }
 .slide__txt p {
@@ -192,12 +185,8 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     font-weight: 700;
 }
 
-.slider__prev:before {
-    content: '<';
-}
-.slider__next:before {
-    content: '>';
-}
+.slider__prev:before { content: '<'; }
+.slider__next:before { content: '>'; }
 
 .slider__prev { left: var(--padding-sides); }
 .slider__next { right: var(--padding-sides); }
@@ -213,7 +202,6 @@ body.about-page {
     padding: var(--padding-sides); 
 }
 
-/* Force ALL text and links on the about page to be white */
 body.about-page a, 
 body.about-page p, 
 body.about-page h1, 
@@ -227,7 +215,7 @@ body.about-page span {
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
 .about__content {
-    display: flex; /* Restores the two-column layout */
+    display: flex; 
     gap: 80px; 
     padding-bottom: 50px;
     max-width: 1000px; 
@@ -241,28 +229,13 @@ body.about-page span {
     flex-direction: column;
 }
 
-.studio-title {
-    font-size: 1.2em; 
-    margin-bottom: 5px; 
-}
+.studio-title { font-size: 1.2em; margin-bottom: 5px; }
+.studio-subtitle { margin-bottom: 30px; }
+.address-line, .phone-number { margin-bottom: 2px; }
+.phone-number { margin-top: 25px; }
 
-.studio-subtitle {
-    margin-bottom: 30px; 
-}
-
-.address-line, .phone-number {
-    margin-bottom: 2px;
-}
-.phone-number {
-    margin-top: 25px; 
-}
-
-.links {
-    margin-top: 10px;
-}
-.links .link-item {
-    margin-top: 5px; 
-}
+.links { margin-top: 10px; }
+.links .link-item { margin-top: 5px; }
 
 /* Projects List (Right Column) */
 .projects-list-section {
@@ -282,14 +255,8 @@ body.about-page span {
     font-size: 1em;
 }
 
-/* Shared Highlighting/Typography */
-.project-number {
-    display: inline;
-}
-
-.highlight {
-    font-style: italic; 
-}
+.project-number { display: inline; }
+.highlight { font-style: italic; }
 
 /* ======================================================= */
 /* 🔑 MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX) - FINAL FIX */
@@ -305,20 +272,23 @@ body.about-page span {
     .slider__next { right: 10px; }
     
     /* 2. Smaller Image Size for Mobile using viewport width calculation */
-    /* This overrides the 600px rule for screens under 768px */
     .slide__img, .slide__img img {
         /* CRITICAL: Force the max-width to be the screen size minus the padding (10px left + 10px right = 20px) */
         max-width: calc(100vw - 20px) !important; 
-        max-height: 400px !important; /* Cap the height at a safe value for vertical space */
+        /* Ensure the image doesn't overflow its vertical container */
+        max-height: 80vh !important;
+        /* Remove the fixed height for mobile and let it be determined by the width constraint */
+        height: auto !important; 
+        width: 100% !important;
     }
     
     /* 3. About Page Layout for Mobile (single column) */
     .about__content {
-        flex-direction: column; /* Stacks columns vertically */
+        flex-direction: column; 
         gap: 40px;
     }
     .about__contact {
-        flex: auto; /* Allow contact info to take full width */
+        flex: auto; 
         max-width: 100%;
     }
     .projects-list-section {
