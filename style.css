@@ -32,7 +32,8 @@ body {
 }
 
 /* Apply font and ensure no underline/color conflicts */
-a, p, h1, h2, h3, div, span {
+/* 🔑 FIXED: EXCLUDING arrow selectors to prevent breaking the arrow content */
+a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
     text-decoration: none !important; 
@@ -45,10 +46,10 @@ a, p, h1, h2, h3, div, span {
 /* Ensure elements that should be bold are 700 */
 .title_link a, 
 .slider__prev, 
-.slider__next, 
-.studio-title, 
-.project-number, 
-.highlight {
+.slider__next {
+    font-weight: 700 !important; 
+}
+.studio-title, .project-number, .highlight {
     font-weight: 700 !important; 
 }
 
@@ -57,7 +58,6 @@ a, p, h1, h2, h3, div, span {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
-    /* Sets the height of the grid to fit screen */
     height: calc(100vh - 2 * var(--padding-sides)); 
     max-width: var(--max-content-width);
     margin: 0 auto; 
@@ -73,14 +73,13 @@ a, p, h1, h2, h3, div, span {
     display: inline-block;
 }
 
----
-## Slideshow Layout (Final No Scroll Fix)
+
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (FINAL NO SCROLL & ALIGNMENT FIXES) --- */
 
 .home__slider {
     display: flex;
     justify-content: flex-start; 
     width: 100%;
-    /* Critical: Ensures slider takes all vertical space left by the header */
     height: 100%;
     flex-grow: 1; 
 }
@@ -88,7 +87,7 @@ a, p, h1, h2, h3, div, span {
 .slider__container {
     width: 100%;
     display: flex; 
-    /* 🔑 Ensure content aligns to the top to start shrink calculation */
+    /* Ensures content aligns to the top to start shrink calculation */
     align-items: flex-start; 
     justify-content: flex-start;
     height: 100%; 
@@ -107,24 +106,26 @@ a, p, h1, h2, h3, div, span {
 .slider__slide {
     display: flex;
     flex-direction: column;
+    /* Ensures image and text blocks are left-aligned */
     align-items: flex-start; 
     width: 100%;
-    /* Key for dynamic shrinking: uses all inherited height */
     height: 100%; 
+    min-height: 0; 
     max-height: 100%; 
 }
 
 .slide__img {
     width: 100%; 
+    /* Centers the image horizontally */
     display: flex;
     justify-content: center;
-    /* 🔑 Allows image to shrink vertically */
+    /* 🔑 Allows image container to shrink vertically */
     flex-shrink: 1; 
 }
 
 .slide__img img {
     display: block;
-    /* Image height is constrained by its flexible container's height */
+    /* Image height is constrained by its flexible container's height (100% of available space) */
     max-height: 100% !important; 
     width: auto !important; 
     max-width: 80% !important; 
@@ -148,8 +149,7 @@ a, p, h1, h2, h3, div, span {
     padding: 0;
 }
 
----
-## Arrow Styling
+/* --- ARROW STYLING --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -192,8 +192,10 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
----
-## About Page Specifics
+
+/* ------------------------------------------- */
+/* --- ABOUT PAGE SPECIFIC DARK THEME FIXES --- */
+/* ------------------------------------------- */
 
 /* Set the black background and allow scrolling */
 body.about-page {
