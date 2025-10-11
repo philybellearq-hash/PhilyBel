@@ -18,8 +18,14 @@
     box-sizing: border-box;
 }
 
+/* 🔑 CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
+html {
+    height: 100%;
+}
+
 body {
-    min-height: 100vh;
+    /* Height is now derived from the fixed 100% of the HTML element */
+    min-height: 100%; 
     font-family: var(--font-family); 
     color: var(--text-color);
     background-color: var(--background-color);
@@ -59,7 +65,8 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: grid;
     grid-template-rows: auto 1fr;
     /* Sets the height of the grid to fit screen */
-    height: calc(100vh - 2 * var(--padding-sides)); 
+    /* 🔑 Ensure calc uses 100% (from HTML/BODY) instead of vh to be safer */
+    height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto; 
 }
@@ -85,6 +92,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     /* Critical: Ensures slider takes all vertical space left by the header */
     height: 100%;
     flex-grow: 1; 
+    min-height: 0; /* Ensures it can collapse properly */
 }
 
 .slider__container {
@@ -209,6 +217,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 /* Set the black background and allow scrolling */
 body.about-page {
     background-color: var(--dark-bg);
+    /* 🔑 IMPORTANT: Re-add overflow-y: scroll for the about page */
     overflow-y: scroll !important; 
 }
 
