@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* 🔑 CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
+/* CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
 html {
     height: 100%;
 }
@@ -65,7 +65,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: grid;
     grid-template-rows: auto 1fr;
     /* Sets the height of the grid to fit screen */
-    /* 🔑 Ensure calc uses 100% (from HTML/BODY) instead of vh to be safer */
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto; 
@@ -89,10 +88,10 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: flex;
     justify-content: flex-start; 
     width: 100%;
-    /* Critical: Ensures slider takes all vertical space left by the header */
+    /* 🔑 CRITICAL FIX: Ensure minimum height is 0 so content can shrink */
     height: 100%;
     flex-grow: 1; 
-    min-height: 0; /* Ensures it can collapse properly */
+    min-height: 0; 
 }
 
 .slider__container {
@@ -102,6 +101,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     align-items: flex-start; 
     justify-content: flex-start;
     height: 100%; 
+    min-height: 0; /* Add min-height to this container */
 }
 
 .slider__wrapper {
@@ -112,6 +112,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-height: 100%; 
     overflow: hidden;
+    min-height: 0; /* Add min-height to this container */
 }
 
 .slider__slide {
@@ -131,7 +132,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     /* Centers the image horizontally */
     display: flex;
     justify-content: center;
-    /* 🔑 ESSENTIAL: Allow container to shrink and start height calculation from zero */
+    /* ESSENTIAL: Allow container to shrink and start height calculation from zero */
     flex-shrink: 1; 
     height: 100%; /* Force height inheritance */
     min-height: 0;
@@ -144,7 +145,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     margin-bottom: 20px; 
     object-fit: contain;
     
-    /* 🔑 ABSOLUTE FIX: Force height to fill 100% of the flexible space */
+    /* ABSOLUTE FIX: Force height to fill 100% of the flexible space */
     max-height: 100% !important; 
     height: 100% !important; 
     min-height: 0; /* Ensures it can be compressed */
@@ -158,7 +159,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
-    /* 🔑 Prevents text from shrinking, forcing the image to give space */
+    /* Prevents text from shrinking, forcing the image to give space */
     flex-shrink: 0; 
 }
 .slide__txt p {
@@ -217,7 +218,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 /* Set the black background and allow scrolling */
 body.about-page {
     background-color: var(--dark-bg);
-    /* 🔑 IMPORTANT: Re-add overflow-y: scroll for the about page */
+    /* IMPORTANT: Re-add overflow-y: scroll for the about page */
     overflow-y: scroll !important; 
 }
 
