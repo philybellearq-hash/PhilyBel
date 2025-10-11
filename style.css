@@ -27,7 +27,7 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Hide scrollbar on the landing page, will be overridden for about page */
+    /* Hide scrollbar on the landing page */
     overflow-y: hidden; 
 }
 
@@ -73,8 +73,8 @@ a, p, h1, h2, h3, div, span {
     display: inline-block;
 }
 
-
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (FINAL NO SCROLL FIX) --- */
+---
+## Slideshow Layout (Final No Scroll Fix)
 
 .home__slider {
     display: flex;
@@ -85,16 +85,15 @@ a, p, h1, h2, h3, div, span {
     flex-grow: 1; 
 }
 
-/* CHANGE: Remove align-items: center */
 .slider__container {
     width: 100%;
     display: flex; 
+    /* 🔑 Ensure content aligns to the top to start shrink calculation */
     align-items: flex-start; 
     justify-content: flex-start;
     height: 100%; 
 }
 
-/* CHANGE: Remove align-items: center */
 .slider__wrapper {
     display: flex;
     justify-content: flex-start;
@@ -110,19 +109,18 @@ a, p, h1, h2, h3, div, span {
     flex-direction: column;
     align-items: flex-start; 
     width: 100%;
-    /* Key for dynamic shrinking - uses all inherited height */
+    /* Key for dynamic shrinking: uses all inherited height */
     height: 100%; 
-    min-height: 0; 
     max-height: 100%; 
 }
 
-/* 🔑 SYNTAX FIX: ADDED CLOSING BRACE HERE */
 .slide__img {
     width: 100%; 
     display: flex;
     justify-content: center;
+    /* 🔑 Allows image to shrink vertically */
     flex-shrink: 1; 
-} /* <--- BRACE ADDED */
+}
 
 .slide__img img {
     display: block;
@@ -142,7 +140,7 @@ a, p, h1, h2, h3, div, span {
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
-    /* KEY FIX: Prevents text from shrinking, forcing the image to give space */
+    /* 🔑 Prevents text from shrinking, forcing the image to give space */
     flex-shrink: 0; 
 }
 .slide__txt p {
@@ -150,7 +148,8 @@ a, p, h1, h2, h3, div, span {
     padding: 0;
 }
 
-/* --- ARROW STYLING --- */
+---
+## Arrow Styling
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -193,10 +192,8 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
-
-/* ------------------------------------------- */
-/* --- ABOUT PAGE SPECIFIC DARK THEME FIXES --- */
-/* ------------------------------------------- */
+---
+## About Page Specifics
 
 /* Set the black background and allow scrolling */
 body.about-page {
@@ -263,3 +260,20 @@ body.about-page span {
 .section-title {
     font-size: 1.2em;
     font-weight: 400 !important;
+    margin-bottom: 20px;
+}
+
+.project-entry {
+    margin-bottom: 35px; 
+    line-height: 1.4;
+    font-size: 1em;
+}
+
+/* Shared Highlighting/Typography */
+.project-number {
+    display: inline;
+}
+
+.highlight {
+    font-style: italic; 
+}
