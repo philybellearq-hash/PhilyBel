@@ -38,7 +38,7 @@ body {
 }
 
 /* Apply font and ensure no underline/color conflicts */
-/* EXCLUDING arrow selectors to prevent breaking the arrow content */
+/* 🔑 FIX: Removed .slider__prev and .slider__next from this group to restore arrows */
 a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
@@ -50,6 +50,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 }
 
 /* Ensure elements that should be bold are 700 */
+/* 🔑 FIX: These are now the only elements explicitly made 700 that are not regular text */
 .title_link a, 
 .slider__prev, 
 .slider__next,
@@ -92,7 +93,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     /* Critical: Ensures slider takes all vertical space left by the header */
     height: 100%;
     flex-grow: 1; 
-    min-height: 0; /* Ensures it can collapse properly */
+    min-height: 0; 
 }
 
 .slider__container {
@@ -102,7 +103,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     align-items: flex-start; 
     justify-content: flex-start;
     height: 100%; 
-    min-height: 0; /* Allows this container to shrink */
+    min-height: 0; 
 }
 
 .slider__wrapper {
@@ -113,7 +114,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-height: 100%; 
     overflow: hidden;
-    min-height: 0; /* Allows this container to shrink */
+    min-height: 0; 
 }
 
 .slider__slide {
@@ -145,11 +146,11 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 
     /* 🔑 CRITICAL FIXES FOR ASPECT RATIO OVERFLOW */
     max-height: 100%; 
-    height: 100%; /* Force image to fill 100% of the flexible space */
+    height: 100%; 
     
-    /* Constrain width by its flexible height, allowing the height to control the layout */
-    width: auto; 
-    max-width: 80%; /* Maintain your horizontal constraint */
+    /* 🔑 SLIGHT ADJUSTMENT: Use 100% width on the image container */
+    width: 100%; 
+    max-width: 100%; /* Let the image container define the max width */
     
     /* Ensure it can be compressed */
     min-height: 0; 
