@@ -292,22 +292,24 @@ body.about-page span {
 }
 
 /* ======================================================= */
-/* 🔑 MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX) */
+/* 🔑 MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX) - FINAL FIX */
 /* ======================================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. Adjust Padding on Small Screens */
+    /* 1. Aggressively adjust Padding and arrows on small screens */
     body {
-        padding: 20px; /* Reduce padding to save space */
+        padding: 10px; /* Reduce padding to an absolute minimum */
     }
-
-    /* 2. Smaller Fixed Image Size for Mobile */
+    .slider__prev { left: 10px; } /* Adjust arrows to stick to the new padding */
+    .slider__next { right: 10px; }
+    
+    /* 2. Smaller Image Size for Mobile using viewport width calculation */
     /* This overrides the 600px rule for screens under 768px */
     .slide__img, .slide__img img {
-        /* Set a safe, smaller max size (e.g., 300px) that won't overflow mobile viewports */
-        max-width: 300px !important; 
-        max-height: 300px !important; 
+        /* CRITICAL: Force the max-width to be the screen size minus the padding (10px left + 10px right = 20px) */
+        max-width: calc(100vw - 20px) !important; 
+        max-height: 400px !important; /* Cap the height at a safe value for vertical space */
     }
     
     /* 3. About Page Layout for Mobile (single column) */
