@@ -2,8 +2,7 @@
     --text-color: #000;
     --background-color: #fff;
     --arrow-color: #FFD700; 
-    /* ✅ FIXED: New Font Family */
-    --font-family: "Noto Sans Display", sans-serif; 
+    --font-family: "BBH Sans Hegarty", sans-serif; 
     --padding-sides: 40px;
     --max-content-width: 1400px;
 }
@@ -16,7 +15,7 @@
 }
 
 body {
-    /* Set min-height to 100vh to define the viewport area for "no scroll" logic */
+    /* Set min-height to 100vh for "no scroll" logic */
     min-height: 100vh;
     font-family: var(--font-family); 
     color: var(--text-color);
@@ -25,15 +24,19 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Prevents vertical scroll bar unless content is explicitly larger than viewport */
     overflow-y: hidden; 
 }
 
-/* ✅ FIX: Apply font to all common elements & ensure no text decoration (underlining) on links */
+/* Apply font and ensure no underline/blue color */
 a, p, h1, h2, h3, div, span {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
-    text-decoration: none !important; /* FIX: Remove underlining from all links/headers */
+    text-decoration: none !important; 
+    font-weight: 400 !important; 
+}
+/* Ensure elements that should be bold are 700 */
+.title_link a, .slider__prev, .slider__next, .studio-title, .project-number, .highlight {
+    font-weight: 700 !important; 
 }
 
 /* --- Header & Grid (Applies to both pages) --- */
@@ -41,95 +44,90 @@ a, p, h1, h2, h3, div, span {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
-    /* Use calc() to make the grid fit exactly within the available vertical space */
     height: calc(100vh - 2 * var(--padding-sides)); 
     max-width: var(--max-content-width);
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .home__header {
     padding-top: 10px; 
-    padding-bottom: 30px; /* Reduced header padding to save vertical space */
-    /* Ensure the header link text is not underlined */
-    text-decoration: none; 
+    padding-bottom: 30px; 
 }
 
 .title_link a {
     font-size: 1.2em;
-    font-weight: 700; 
     display: inline-block;
-    text-decoration: none; /* FIX: Double check link has no decoration */
 }
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (NO SCROLL FIX) --- */
+
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (IMAGE CENTERED, TEXT LEFT-ALIGNED) --- */
 
 .home__slider {
     display: flex;
-    justify-content: center; 
+    /* ✅ FIX: Keep justified to start (left-aligns the whole slider block) */
+    justify-content: flex-start; 
     width: 100%;
-    /* Use flex-grow to ensure the slider takes all remaining vertical space */
     flex-grow: 1; 
 }
 
 .slider__container {
     width: 100%;
-    /* Use Flexbox to ensure the content inside can shrink */
     display: flex; 
-    align-items: center; /* Vertically centers the wrapper */
-    justify-content: center;
+    align-items: center; 
+    justify-content: flex-start;
 }
 
 .slider__wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    /* Set a max-height relative to the viewport for the "no scroll" fix */
     max-height: 100%; 
-    overflow: hidden; /* Prevent scrolling within the wrapper */
+    overflow: hidden;
 }
 
 .slider__slide {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    /* ✅ FIX: Align items to the START to align content left */
+    align-items: flex-start; 
     width: 100%;
-    /* Allow the slide to shrink to fit the wrapper's max-height */
     max-height: 100%; 
 }
 
 .slide__img {
     width: 100%; 
+    /* 🔑 KEY FIX: Override the flex-start inherited above and center the image */
     display: flex;
     justify-content: center;
-    flex-shrink: 1; /* Allow the image container to shrink */
+    flex-shrink: 1; 
 }
 
 .slide__img img {
     display: block;
-    /* ✅ FIXED: Image height is now limited by the remaining screen space */
-    max-height: calc(100vh - 200px) !important; /* Dynamic height based on screen, accounting for header/padding */
-    width: auto !important; /* Allow width to scale proportionally to height */
-    max-width: 80% !important; /* Ensure image isn't too wide on large screens */
-    margin-bottom: 20px; /* Reduced margin to save vertical space */
+    max-height: calc(100vh - 200px) !important; 
+    width: auto !important; 
+    max-width: 80% !important; 
+    margin-bottom: 20px; 
     object-fit: contain;
 }
 
-/* Project Text Description (Aligned with image) */
+/* Project Text Description */
 .slide__txt {
+    /* ✅ Text width is set to 80% of the container, aligning its start with the left edge of the page content */
     width: 80%; 
-    max-width: 700px; /* Kept a max width for large screens */
+    max-width: 700px;
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
-    flex-shrink: 0; /* Text block should not shrink */
+    flex-shrink: 0; 
 }
 .slide__txt p {
     margin: 0;
     padding: 0;
 }
 
-/* --- ARROW STYLING (Yellow and Bigger) --- */
+/* --- ARROW STYLING (Unchanged) --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -154,7 +152,6 @@ a, p, h1, h2, h3, div, span {
     font-weight: 700;
 }
 
-/* Position arrows relative to the body padding */
 .slider__prev { 
     left: var(--padding-sides); 
 }
@@ -162,7 +159,6 @@ a, p, h1, h2, h3, div, span {
     right: var(--padding-sides); 
 }
 
-/* Arrow Symbols via CSS content */
 .slider__prev:before {
     content: '<';
 }
@@ -174,7 +170,7 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
-/* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
+/* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Unchanged) --- */
 
 .about__content {
     display: flex;
