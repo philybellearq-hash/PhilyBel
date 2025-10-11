@@ -6,31 +6,9 @@
     --padding-sides: 40px;
     --max-content-width: 1400px;
     
-    /* Define new colors for the dark theme */
+    /* Define colors for the dark theme (used by body.about-page) */
     --dark-bg: #000;
     --dark-text: #fff;
-}
-
-/* ... (Global reset and default body styles remain the same) ... */
-
-/* ------------------------------------------- */
-/* --- ABOUT PAGE SPECIFIC DARK THEME FIXES --- */
-/* ------------------------------------------- */
-
-/* Set the black background and white text for the entire about page */
-body.about-page {
-    background-color: var(--dark-bg);
-}
-
-/* Force ALL text and links on the about page to be white */
-body.about-page a, 
-body.about-page p, 
-body.about-page h1, 
-body.about-page h2, 
-body.about-page h3, 
-body.about-page div, 
-body.about-page span {
-    color: var(--dark-text) !important;
 }
 
 /* --- Global Reset and Typography --- */
@@ -41,7 +19,7 @@ body.about-page span {
 }
 
 body {
-    /* Set min-height to 100vh for "no scroll" logic */
+    /* Set min-height to 100vh for "no scroll" logic on landing page */
     min-height: 100vh;
     font-family: var(--font-family); 
     color: var(--text-color);
@@ -50,18 +28,28 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
+    /* Hide scrollbar on the landing page, will be overridden for about page */
     overflow-y: hidden; 
 }
 
-/* Apply font and ensure no underline/blue color */
+/* Apply font and ensure no underline/color conflicts */
 a, p, h1, h2, h3, div, span {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
     text-decoration: none !important; 
     font-weight: 400 !important; 
+    /* Font clarity fixes */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
 }
+
 /* Ensure elements that should be bold are 700 */
-.title_link a, .slider__prev, .slider__next, .studio-title, .project-number, .highlight {
+.title_link a, 
+.slider__prev, 
+.slider__next, 
+.studio-title, 
+.project-number, 
+.highlight {
     font-weight: 700 !important; 
 }
 
@@ -70,6 +58,7 @@ a, p, h1, h2, h3, div, span {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
+    /* Sets the height of the grid to fit screen */
     height: calc(100vh - 2 * var(--padding-sides)); 
     max-width: var(--max-content-width);
     margin: 0 auto; 
@@ -86,11 +75,11 @@ a, p, h1, h2, h3, div, span {
 }
 
 
-/* --- INDEX.HTML: SLIDESHOW LAYOUT (IMAGE CENTERED, TEXT LEFT-ALIGNED) --- */
+/* --- INDEX.HTML: SLIDESHOW LAYOUT (NO SCROLL / ALIGNMENT FIXES) --- */
 
 .home__slider {
     display: flex;
-    /* ✅ FIX: Keep justified to start (left-aligns the whole slider block) */
+    /* Left-aligns the whole slider block */
     justify-content: flex-start; 
     width: 100%;
     flex-grow: 1; 
@@ -115,37 +104,45 @@ a, p, h1, h2, h3, div, span {
 .slider__slide {
     display: flex;
     flex-direction: column;
-    /* ✅ FIX: Align items to the START to align content left */
+    /* Left-aligns content blocks (image container, text block) */
     align-items: flex-start; 
     width: 100%;
+    /* Key for dynamic shrinking */
+    height: 100%; 
+    min-height: 0; 
     max-height: 100%; 
 }
 
 .slide__img {
     width: 100%; 
-    /* 🔑 KEY FIX: Override the flex-start inherited above and center the image */
+    /* Overrides parent flex-start and centers the image within the slide */
     display: flex;
     justify-content: center;
+    /* Allows image to shrink vertically */
     flex-shrink: 1; 
+    min-height: 0; 
 }
 
 .slide__img img {
     display: block;
-    max-height: calc(100vh - 200px) !important; 
+    /* Image height is constrained by its flexible container's height */
+    max-height: 100% !important; 
     width: auto !important; 
     max-width: 80% !important; 
     margin-bottom: 20px; 
     object-fit: contain;
+    flex-shrink: 1; 
 }
 
 /* Project Text Description */
 .slide__txt {
-    /* ✅ Text width is set to 80% of the container, aligning its start with the left edge of the page content */
+    /* Text block is left-aligned and its width is set */
     width: 80%; 
     max-width: 700px;
     text-align: left; 
     font-size: 1em; 
     line-height: 1.6;
+    /* KEY FIX: Prevents text from shrinking, forcing the image to give space */
     flex-shrink: 0; 
 }
 .slide__txt p {
@@ -153,7 +150,7 @@ a, p, h1, h2, h3, div, span {
     padding: 0;
 }
 
-/* --- ARROW STYLING (Unchanged) --- */
+/* --- ARROW STYLING --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -164,7 +161,7 @@ a, p, h1, h2, h3, div, span {
     padding: 0; 
     cursor: pointer;
     font-size: 3em; 
-    color: var(--arrow-color); 
+    color: var(--arrow-color); /* Yellow */
     opacity: 0.8; 
     transition: opacity 0.2s;
     z-index: 99; 
@@ -196,7 +193,29 @@ a, p, h1, h2, h3, div, span {
     opacity: 1;
 }
 
-/* --- ABOUT.HTML: CONTACT/LIST LAYOUT (Unchanged) --- */
+
+/* ------------------------------------------- */
+/* --- ABOUT PAGE SPECIFIC DARK THEME FIXES --- */
+/* ------------------------------------------- */
+
+/* Set the black background and allow scrolling */
+body.about-page {
+    background-color: var(--dark-bg);
+    overflow-y: scroll !important; 
+}
+
+/* Force ALL text and links on the about page to be white */
+body.about-page a, 
+body.about-page p, 
+body.about-page h1, 
+body.about-page h2, 
+body.about-page h3, 
+body.about-page div, 
+body.about-page span {
+    color: var(--dark-text) !important;
+}
+
+/* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
 .about__content {
     display: flex;
@@ -205,4 +224,59 @@ a, p, h1, h2, h3, div, span {
     max-width: 1000px; 
     margin: 0 auto; 
 }
-/* ... rest of the about styles ... */
+
+.about__contact {
+    flex: 0 0 300px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.studio-title {
+    font-size: 1.2em; 
+    margin-bottom: 5px; 
+}
+
+.studio-subtitle {
+    margin-bottom: 30px; 
+}
+
+.address-line, .phone-number {
+    margin-bottom: 2px;
+}
+.phone-number {
+    margin-top: 25px; 
+}
+
+.links {
+    margin-top: 10px;
+}
+.links .link-item {
+    margin-top: 5px; 
+}
+
+/* Projects List (Right Column) */
+.projects-list-section {
+    flex-grow: 1;
+    max-width: 800px; 
+}
+
+.section-title {
+    font-size: 1.2em;
+    font-weight: 400 !important;
+    margin-bottom: 20px;
+}
+
+.project-entry {
+    margin-bottom: 35px; 
+    line-height: 1.4;
+    font-size: 1em;
+}
+
+/* Shared Highlighting/Typography */
+.project-number {
+    display: inline;
+}
+
+.highlight {
+    font-style: italic; 
+}
