@@ -40,12 +40,17 @@ a, p, h1, h2, h3, div, span {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
     text-decoration: none !important; 
-    font-weight: 400 !important; /* Default regular weight */
+    font-weight: 400 !important; 
+    
+    /* 🔑 FINAL FIX: FORCE SHARPER FONT RENDERING ON ALL TEXT ELEMENTS */
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
 }
 /* Ensure elements that should be bold are 700 */
 .title_link a, .slider__prev, .slider__next, .studio-title, .project-number, .highlight {
     font-weight: 700 !important; 
 }
+
 
 /* --- Header & Grid (Applies to both pages) --- */
 
