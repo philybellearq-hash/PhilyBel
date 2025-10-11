@@ -14,29 +14,18 @@
             <h1 class="title_link"><a href="about.html">PHILYBEL</a></h1>
         </header>
 
-        <div class="home__slider">
-            <div class="slider__container">
-                <div class="slider__wrapper">
-                    
-                    <div class="slider__slide active">
-                        <div class="slide__img">
-                            <img id="project-image" src="images/1.jpg" alt="Project Image" class="lazy-loaded">
-                        </div>
-                        
-                        <div class="slide__txt">
-                            <p id="project-details">
-                                H62: FESTZELT<br />
-                            Design for a 140 sqm coastal 
-                            </p>
+    <div class="home__slider">
+                <div class="slider__container">
+                    <div class="slider__wrapper">
+                        <div class="slider__slide active">
                         </div>
                     </div>
                 </div>
             </div>
+            
+                        <button class="slider__prev" onclick="navigateSlide(-1)"></button>
+            <button class="slider__next" onclick="navigateSlide(1)"></button>
         </div>
-        
-        <button class="slider__prev" onclick="navigateSlide(-1)"></button>
-        <button class="slider__next" onclick="navigateSlide(1)"></button>
-    </div>
     <script src="script.js"></script>
 </body>
 </html>
