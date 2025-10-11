@@ -2,22 +2,22 @@
 const projects = [
     {
         image: 'images/1.jpg',
-        number: '061: OASIS',
-        details: 'Competition entry for a mixed use public campus, Renens, <span class="highlight">1st prize !</span><br />With Coralie Berchtold and Yann Junod, 2022-29'
+        number: 'H62: FESTZELT',
+        details: 'Design for a 140 sqm off-grid timber house, R. Valparaíso, 2025 - ongoing.        Keywords: Climate buffer; Wood; Earth; Circular construction; Water'
     },
     {
         image: 'images/2.jpg',
-        number: '031: HOUSE FOR ALMOST EVERYTHING',
-        details: 'Zurich, 2020-23<br />Picture by <a href="#">Ciro Miguel</a>'
+        number: 'BCN: BIODIVERSITY HUBS',
+        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with  <a href="#">FHAO and Sebastian Delgado</a>         Keywords: Trombé-Wall; Transspecies; Biodiversity; Adaptive Reuse'      
     },
     {
         image: 'images/3.jpg',
-        number: '048: SCHOPF',
-        details: 'Transformation of an agricultural shed, Zurich, 2021-22'
+        number: 'D32: INFANTE',
+        details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022        Keywords: Minimal intervention; Low-cost strategies'
     },
     {
         image: 'images/4.jpg',
-        number: '050: MAXIMUM HOUSE',
+        number: 'H68: WAVY',
         details: 'Neuchâtel, 2021-23<br />Picture by <a href="#">Pierre Marmy</a>'
     },
     {
