@@ -28,7 +28,11 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    overflow-y: scroll; /* Allow scrolling on the About page */
+    overflow-y: scroll; 
+    
+    /* 🔑 FIX: FORCE SHARPER FONT RENDERING */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Apply font and ensure no underline/color conflicts */
