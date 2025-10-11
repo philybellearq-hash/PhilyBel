@@ -66,7 +66,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
-    /* FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
+    /* 🔑 CRITICAL FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
     overflow-y: hidden; 
 }
 
@@ -130,18 +130,18 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     min-height: 0;
     
-    /* 🔑 FINAL FIX 1: Fixed Maximum Size for Image Container (medium size) */
-    max-width: 800px; /* Limits horizontal size */
-    max-height: 800px; /* Limits vertical size */
+    /* 🔑 FINAL FIX: Smaller Fixed Maximum Size for Image Container */
+    max-width: 600px; /* Limits horizontal size */
+    max-height: 600px; /* Limits vertical size */
 }
 
 .slide__img img {
     display: block;
     object-fit: contain;
 
-    /* 🔑 FINAL FIX 2: Fixed Maximum Size for the Image itself (non-reactive) */
-    max-height: 800px; 
-    max-width: 800px; 
+    /* FINAL FIX: Smaller Fixed Maximum Size for the Image itself (non-reactive) */
+    max-height: 600px; 
+    max-width: 600px; 
     height: auto; 
     width: auto; 
     
