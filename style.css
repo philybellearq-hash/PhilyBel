@@ -66,7 +66,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
-    /* 🔑 CRITICAL FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
+    /* CRITICAL FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
     overflow-y: hidden; 
 }
 
@@ -81,7 +81,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: inline-block;
 }
 
-/* --- Slideshow Layout and Image Shrinking --- */
+/* --- Slideshow Layout and Image Shrinking (DESKTOP/DEFAULT) --- */
 
 .home__slider {
     display: flex;
@@ -122,6 +122,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     max-height: 100%; 
 }
 
+/* DESKTOP/DEFAULT IMAGE SIZE (Max 600px) */
 .slide__img {
     width: 100%; 
     display: flex;
@@ -130,22 +131,21 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     min-height: 0;
     
-    /* 🔑 FINAL FIX: Smaller Fixed Maximum Size for Image Container */
-    max-width: 600px; /* Limits horizontal size */
-    max-height: 600px; /* Limits vertical size */
+    /* Fixed Maximum Size for Image Container (desktop) */
+    max-width: 600px; 
+    max-height: 600px; 
 }
 
 .slide__img img {
     display: block;
     object-fit: contain;
 
-    /* FINAL FIX: Smaller Fixed Maximum Size for the Image itself (non-reactive) */
+    /* Fixed Maximum Size for the Image itself (desktop) */
     max-height: 600px; 
     max-width: 600px; 
     height: auto; 
     width: auto; 
     
-    /* Also ensure it is responsive for SMALLER screens */
     min-height: 0; 
     flex-shrink: 1;
     
@@ -289,4 +289,37 @@ body.about-page span {
 
 .highlight {
     font-style: italic; 
+}
+
+/* ======================================================= */
+/* 🔑 MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX) */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+    
+    /* 1. Adjust Padding on Small Screens */
+    body {
+        padding: 20px; /* Reduce padding to save space */
+    }
+
+    /* 2. Smaller Fixed Image Size for Mobile */
+    /* This overrides the 600px rule for screens under 768px */
+    .slide__img, .slide__img img {
+        /* Set a safe, smaller max size (e.g., 300px) that won't overflow mobile viewports */
+        max-width: 300px !important; 
+        max-height: 300px !important; 
+    }
+    
+    /* 3. About Page Layout for Mobile (single column) */
+    .about__content {
+        flex-direction: column; /* Stacks columns vertically */
+        gap: 40px;
+    }
+    .about__contact {
+        flex: auto; /* Allow contact info to take full width */
+        max-width: 100%;
+    }
+    .projects-list-section {
+        max-width: 100%;
+    }
 }
