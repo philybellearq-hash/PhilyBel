@@ -32,7 +32,7 @@ body {
 }
 
 /* Apply font and ensure no underline/color conflicts */
-/* 🔑 FIXED: EXCLUDING arrow selectors to prevent breaking the arrow content */
+/* EXCLUDING arrow selectors to prevent breaking the arrow content */
 a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     font-family: var(--font-family) !important; 
     color: var(--text-color) !important; 
@@ -46,10 +46,10 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 /* Ensure elements that should be bold are 700 */
 .title_link a, 
 .slider__prev, 
-.slider__next {
-    font-weight: 700 !important; 
-}
-.studio-title, .project-number, .highlight {
+.slider__next,
+.studio-title, 
+.project-number, 
+.highlight {
     font-weight: 700 !important; 
 }
 
@@ -58,6 +58,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 .home__grid {
     display: grid;
     grid-template-rows: auto 1fr;
+    /* Sets the height of the grid to fit screen */
     height: calc(100vh - 2 * var(--padding-sides)); 
     max-width: var(--max-content-width);
     margin: 0 auto; 
@@ -66,6 +67,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 .home__header {
     padding-top: 10px; 
     padding-bottom: 30px; 
+    flex-shrink: 0; /* Ensures header does not shrink */
 }
 
 .title_link a {
@@ -80,6 +82,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     display: flex;
     justify-content: flex-start; 
     width: 100%;
+    /* Critical: Ensures slider takes all vertical space left by the header */
     height: 100%;
     flex-grow: 1; 
 }
@@ -109,6 +112,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     /* Ensures image and text blocks are left-aligned */
     align-items: flex-start; 
     width: 100%;
+    /* Key for dynamic shrinking: uses all inherited height */
     height: 100%; 
     min-height: 0; 
     max-height: 100%; 
@@ -119,18 +123,23 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     /* Centers the image horizontally */
     display: flex;
     justify-content: center;
-    /* 🔑 Allows image container to shrink vertically */
+    /* 🔑 ESSENTIAL: Allow container to shrink and start height calculation from zero */
     flex-shrink: 1; 
+    height: 100%; /* Force height inheritance */
+    min-height: 0;
 }
 
 .slide__img img {
     display: block;
-    /* Image height is constrained by its flexible container's height (100% of available space) */
-    max-height: 100% !important; 
     width: auto !important; 
     max-width: 80% !important; 
     margin-bottom: 20px; 
     object-fit: contain;
+    
+    /* 🔑 ABSOLUTE FIX: Force height to fill 100% of the flexible space */
+    max-height: 100% !important; 
+    height: 100% !important; 
+    min-height: 0; /* Ensures it can be compressed */
     flex-shrink: 1; 
 }
 
