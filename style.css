@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* 🔑 CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
+/* CRITICAL FIX: Ensure HTML height is strictly 100% of the viewport */
 html {
     height: 100%;
 }
@@ -33,7 +33,7 @@ body {
     padding: var(--padding-sides);
     font-size: 16px; 
     position: relative;
-    /* Default is auto, which allows scrolling for the About page */
+    /* Default scroll is fine for about page */
     overflow-y: auto; 
 }
 
@@ -67,7 +67,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
-    /* 🔑 FIX: Hide overflow ONLY on the home grid to protect the About page */
+    /* FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
     overflow-y: hidden; 
 }
 
@@ -130,13 +130,17 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     flex-shrink: 1; 
     height: 100%; 
     min-height: 0;
+    
+    /* 🔑 NEW FIX: Constrain the image container's maximum height */
+    /* This makes the image smaller and forces the text to be visible */
+    max-height: 70%; 
 }
 
 .slide__img img {
     display: block;
     object-fit: contain;
 
-    /* 🔑 FINAL IMAGE FIX: Max constraints are key for aspect ratio preservation */
+    /* Max constraints are key for aspect ratio preservation */
     max-height: 100%; 
     max-width: 100%; 
     height: auto; 
@@ -163,7 +167,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     padding: 0;
 }
 
-/* --- ARROW STYLING (RESTORED) --- */
+/* --- ARROW STYLING --- */
 
 .slider__prev, .slider__next {
     position: fixed; 
@@ -208,12 +212,13 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 
 ---
 
-## About Page Specifics (STABLE RESTORE)
+## About Page Specifics (Restored)
 
 /* Set the black background */
 body.about-page {
     background-color: var(--dark-bg);
-    overflow-y: scroll; 
+    /* Ensures the about page content is visible and scrollable */
+    overflow-y: scroll !important; 
     padding: var(--padding-sides); 
 }
 
