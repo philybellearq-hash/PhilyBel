@@ -6,7 +6,7 @@ const projects = [
         details: 'Design for a 140 sqm off-grid timber house, R. VALPARAISO, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
     },
     {
-        image: 'images/2.jpg',
+        image: 'images/2.gif',
         number: 'BCN: BIODIVERSITY HUBS',
         details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado <br>Keywords: Trombe-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
     },
@@ -31,7 +31,7 @@ const projects = [
         details: 'Three large rooms in a small house, Geneva, 2021'
     },
     {
-        image: 'images/7.jpg',
+        image: 'images/7.gif',
         number: 'MA: KULTURWERKSTATT EUROPA',
         details: 'Master thesis, design for culture and language hub in Aachen, KIT, Prof. M. Morger, 2018 <br>Keywords: Building in context. Positive/Negative'
     },
