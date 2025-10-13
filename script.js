@@ -3,7 +3,7 @@ const projects = [
     {
         image: 'images/1.png',
         number: 'H62: FESTZELT',
-        details: 'Design for a 140 sqm off-grid timber house, V Region, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
+        details: 'Design for a 140 sqm off-grid timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
     },
     {
         image: 'images/2.gif',
@@ -18,7 +18,7 @@ const projects = [
     {
         image: 'images/4.jpg',
         number: 'H68: WAVY',
-        details: 'Design for a 140 sqm adaptable timber house, V Region, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
+        details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
     {
         image: 'images/5.jpg',
@@ -28,7 +28,7 @@ const projects = [
     {
         image: 'images/6.jpg',
         number: 'H69A: A HANGAR IN THE WOODS',
-        details: 'Design for a 140 sqm steel frame house using in parts a prefab hangar construction system, V Region, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection. Thermal mass'
+        details: 'Design for a 140 sqm steel frame house using in parts a prefab hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection. Thermal mass'
     },
     {
         image: 'images/7.gif',
