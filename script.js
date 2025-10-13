@@ -41,7 +41,7 @@ const projects = [
         details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
-        image: 'images/9.jpf',
+        image: 'images/9.jpg',
         number: 'M2: SUNSET BLVD',
         details: 'Master thesis, design for an affordable housing mixed-use megastructure,<br> KIT, Prof. M. Frohn, 2018 <br>Keywords: Design through filmtheory. Flexible Floorplans. Future adaptability'
     },
