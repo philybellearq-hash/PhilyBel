@@ -42,14 +42,29 @@ const projects = [
     },
     {
         image: 'images/9.jpg',
-        number: 'MP: SUNSET BLVD !',
-        details: 'Master thesis, design for an affordable housing megastructure, KIT, Prof. M. Frohn, 2018 <br>Keywords: Filmtheory. Flexible Floorplan. Future adaptability'
+        number: 'MP: SUNSET BLVD',
+        details: 'Master thesis, design for an affordable housing mixed-use megastructure, KIT, Prof. M. Frohn, 2018 <br>Keywords: Design through filmtheory. Flexible Floorplans. Future adaptability'
     },
     {
         image: 'images/10.jpg',
-        number: '036: NEIGHBOURS',
-        details: 'Specific transformation of a series of apartments, Zurich, 2020'
-    }
+        number: 'MC: OPEN CODES',
+        details: 'Design entry for an exhibition at ZKM Karlsruhe curated bei Peter Weibel, KIT, Prof. M. Frohn, 2018, in collaboration with Juan Manuel Salgado <br>Keywords: Concept through translation. Grid. Virtual space'
+    },
+    {
+        image: 'images/4.jpg',
+        number: 'H68: WAVY',
+        details: 'Design for a 140 sqm adaptable timber house, R. VALPARAISO, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Thermal mass'
+    },
+    {
+        image: 'images/5.jpg',
+        number: 'D42: MILLER',
+        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
+    },
+    {
+        image: 'images/6.jpg',
+        number: '020: FILTER HOUSE',
+        details: 'Three large rooms in a small house, Geneva, 2021'
+    },
 ];
 
 let currentProjectIndex = 0;
