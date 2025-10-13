@@ -33,7 +33,7 @@ const projects = [
     {
         image: 'images/7.gif',
         number: 'MA: KULTURWERKSTATT EUROPA',
-        details: 'Master thesis, design for culture and language hub in Aachen, KIT, Prof. M. Morger, 2018 <br>Keywords: Building in context. Positive/Negative'
+        details: 'Master thesis, design for a culture and language hub in Aachen, KIT, Prof. M. Morger, 2018 <br>Keywords: Building in context. Positive/Negative'
     },
     {
         image: 'images/8.jpg',
@@ -42,8 +42,8 @@ const projects = [
     },
     {
         image: 'images/9.jpg',
-        number: '037: BEND IT LIKE IT’S HOT !',
-        details: 'Family of galvanized steel tubular lamps,<br />Galerie Ruine, Geneva, 2020'
+        number: 'MP: SUNSET BLVD !',
+        details: 'Master thesis, design for an affordable housing megastructure, KIT, Prof. M. Frohn, 2018 <br>Keywords: Filmtheory. Flexible Floorplan. Future adaptability'
     },
     {
         image: 'images/10.jpg',
