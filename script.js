@@ -3,12 +3,12 @@ const projects = [
     {
         image: 'images/1.png',
         number: 'H62: FESTZELT',
-        details: 'Design for a 140 sqm off-grid timber house, R. Valparaíso, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
+        details: 'Design for a 140 sqm off-grid timber house, R. VALPARAISO, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
     },
     {
         image: 'images/2.jpg',
         number: 'BCN: BIODIVERSITY HUBS',
-        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with  <a href="#">FHAO and Sebastian Delgado</a> <br>Keywords: Trombé-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
+        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado <br>Keywords: Trombe-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
     },
     {
         image: 'images/3.jpg',
@@ -18,7 +18,7 @@ const projects = [
     {
         image: 'images/4.jpg',
         number: 'H68: WAVY',
-        details: 'Neuchâtel, 2021-23<br />Picture by <a href="#">Pierre Marmy</a>'
+        details: 'Design for a 140 sqm adaptable timber house, R. VALPARAISO, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Thermal mass'
     },
     {
         image: 'images/5.jpg',
@@ -32,8 +32,8 @@ const projects = [
     },
     {
         image: 'images/7.jpg',
-        number: '065: DRIFT',
-        details: 'Exhibited at the Biennale of Territory, Lugano, 2022<br />With <a href="#">Arnaud Eubelen</a> and David Moser'
+        number: 'MA: KULTURWERKSTATT EUROPA',
+        details: 'Master thesis, design for culture and language hub in Aachen, KIT, Prof. M. Morger, 2018 <br>Keywords: Building in context. Positive/Negative'
     },
     {
         image: 'images/8.jpg',
