@@ -51,7 +51,7 @@ const projects = [
         details: 'Design entry for an exhibition at ZKM Karlsruhe curated bei Peter Weibel,<br> KIT, Prof. M. Frohn, 2018, in collaboration with Juan Manuel Salgado <br>Keywords: Concept through translation. Grid. Virtual space'
     },
     {
-        image: 'images/11.jpg',
+        image: 'images/11.png',
         number: 'ARCH+258: URBANE PRAXIS',
         details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Partipative design'
     },
