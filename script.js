@@ -11,7 +11,7 @@ const projects = [
         details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado <br>Keywords: Trombe-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
     },
     {
-        image: 'images/3.pdf',
+        image: 'images/3.jpg',
         number: 'D32: INFANTE',
         details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
