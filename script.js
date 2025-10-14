@@ -53,18 +53,14 @@ const projects = [
     {
         image: 'images/11.png',
         number: 'ARCH+258: URBANE PRAXIS',
-        details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Partipative design'
+        details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Participative design'
     },
     {
         image: 'images/5.jpg',
         number: 'D42: MILLER',
         details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
-    {
-        image: 'images/6.jpg',
-        number: '020: FILTER HOUSE',
-        details: 'Three large rooms in a small house, Geneva, 2021'
-    },
+
 ];
 
 let currentProjectIndex = 0;
