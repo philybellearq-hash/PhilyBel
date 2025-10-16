@@ -11,7 +11,7 @@ const projects = [
         details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado <br>Keywords: Trombe-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
     },
     {
-        image: 'images/3.jpg',
+        image: 'images/3.png',
         number: 'D32: INFANTE',
         details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
@@ -21,7 +21,7 @@ const projects = [
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
     {
-        image: 'images/5.png',
+        image: 'images/5.jpg',
         number: 'D42: MILLER',
         details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
