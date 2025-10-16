@@ -16,7 +16,7 @@ const projects = [
         details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
-        image: 'images/4.jpg',
+        image: 'images/4.png',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
