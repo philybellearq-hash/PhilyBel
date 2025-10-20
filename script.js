@@ -55,7 +55,12 @@ const projects = [
         number: 'ARCH+258: URBANE PRAXIS',
         details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Participative design'
     },
-   
+  {
+        image: 'images/12.png',
+        number: 'H67B: TROMBE HOUSE',
+        details: 'Design for a 100 sqm. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Trombe-Wall. Legalparameters.'
+    },
+      
 
 ];
 
