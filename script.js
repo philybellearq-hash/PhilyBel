@@ -1,4 +1,5 @@
-// Data for 13 placeholder images and their descriptions
+
+// Data for 10 placeholder images and their descriptions
 const projects = [
     {
         image: 'images/1.png',
@@ -55,29 +56,18 @@ const projects = [
         number: 'ARCH+258: URBANE PRAXIS',
         details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Participative design'
     },
-    {
+  {
         image: 'images/12.png',
         number: 'H67B: TROMBE HOUSE',
         details: 'Design for a 100 sqm. house. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Trombe-Wall. Legalparameters.'
     },
-    {
+       {
         image: 'images/13.png',
         number: 'H69B: BAY HOUSE',
         details: 'Design for a 110 sqm. house. A thermally activated earth wall and two pods, V Region, Chile, 2025 - ongoing. <br>Keywords: Rammed earth. Timber. Water reuse.'
     },
+
 ];
-
-// 🔑 New function to shuffle an array (using the standard Fisher-Yates algorithm)
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        // Swap elements array[i] and array[j]
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// 🔑 Shuffle the projects array immediately after definition
-shuffleArray(projects);
 
 let currentProjectIndex = 0;
 
@@ -105,6 +95,6 @@ function navigateSlide(direction) {
 
 // Initial display on page load
 document.addEventListener('DOMContentLoaded', () => {
-    // The shuffled array will automatically start with a random project
+    // NOTE: This assumes 'images/1.jpg' to 'images/10.jpg' exist in your folder structure.
     updateProjectDisplay();
 });
