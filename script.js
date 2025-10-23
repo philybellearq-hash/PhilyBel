@@ -58,9 +58,13 @@ const projects = [
   {
         image: 'images/12.png',
         number: 'H67B: TROMBE HOUSE',
-        details: 'Design for a 100 sqm. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Trombe-Wall. Legalparameters.'
+        details: 'Design for a 100 sqm. house. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Trombe-Wall. Legalparameters.'
     },
-      
+       {
+        image: 'images/13.png',
+        number: 'H69B: BAY HOUSE',
+        details: 'Design for a 110 sqm. house. A thermally activated earth wall and two pods, V Region, Chile, 2025 - ongoing. <br>Keywords: Rammed earth. Timber. Water reuse.'
+    },
 
 ];
 
