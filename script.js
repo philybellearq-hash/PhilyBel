@@ -3,70 +3,66 @@ const projects = [
     {
         image: 'images/1.png',
         number: 'H62: FESTZELT',
-        details: 'Design for a 140 sqm off-grid timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: Climate buffer. Wood. Earth. Circular construction. Water'
+        details: 'Design for a 140 sqm off-grid timber house, R. Valparaíso, 2025 - ongoing. <br>Keywords: Climate buffer; Wood; Earth; Circular construction; Water'
     },
     {
-        image: 'images/2.gif',
+        image: 'images/2.jpg',
         number: 'BCN: BIODIVERSITY HUBS',
-        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado <br>Keywords: Trombe-Wall. Transspecies. Biodiversity; Adaptive Reuse'      
+        details: 'Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with  <a href="#">FHAO and Sebastian Delgado</a> <br>Keywords: Trombé-Wall; Transspecies; Biodiversity; Adaptive Reuse'      
     },
     {
-        image: 'images/3.png',
+        image: 'images/3.jpg',
         number: 'D32: INFANTE',
-        details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
+        details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention; Low-cost strategies'
     },
     {
-        image: 'images/4.png',
+        image: 'images/4.jpg',
         number: 'H68: WAVY',
-        details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
+        details: 'Neuchâtel, 2021-23<br />Picture by <a href="#">Pierre Marmy</a>'
     },
     {
         image: 'images/5.jpg',
-        number: 'D42: MILLER',
-        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
+        number: '067: UPLIFT',
+        details: 'Transformation of an agricultural house, Neuchâtel, 2022-24, in collaboration with <a href="#">Marginalia</a>'
     },
     {
         image: 'images/6.jpg',
-        number: 'H69A: A HANGAR IN THE WOODS',
-        details: 'Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection.'
+        number: '020: FILTER HOUSE',
+        details: 'Three large rooms in a small house, Geneva, 2021'
     },
     {
-        image: 'images/7.gif',
-        number: 'M1: KULTURWERKSTATT EUROPA',
-        details: 'Master thesis, design for a culture and language hub in Aachen,<br> KIT, Prof. M. Morger, 2018 <br>Keywords: Building in context. Positive/Negative'
+        image: 'images/7.jpg',
+        number: '065: DRIFT',
+        details: 'Exhibited at the Biennale of Territory, Lugano, 2022<br />With <a href="#">Arnaud Eubelen</a> and David Moser'
     },
     {
         image: 'images/8.jpg',
-        number: 'D42: MILLER',
-        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
+        number: '038: AREAL DEPOT DEUTWEG',
+        details: 'Conservation, extension and transformation of a former tram depot. Winterthur, 2021'
     },
     {
         image: 'images/9.jpg',
-        number: 'M2: SUNSET BLVD',
-        details: 'Master thesis, design for an affordable housing mixed-use megastructure,<br> KIT, Prof. M. Frohn, 2018 <br>Keywords: Design through filmtheory. Flexible Floorplans. Future adaptability'
+        number: '037: BEND IT LIKE IT’S HOT !',
+        details: 'Family of galvanized steel tubular lamps,<br />Galerie Ruine, Geneva, 2020'
     },
     {
         image: 'images/10.jpg',
-        number: 'M3: OPEN CODES',
-        details: 'Design entry for an exhibition at ZKM Karlsruhe curated bei Peter Weibel,<br> KIT, Prof. M. Frohn, 2018, in collaboration with Juan Manuel Salgado <br>Keywords: Concept through translation. Grid. Virtual space'
-    },
-    {
-        image: 'images/11.png',
-        number: 'ARCH+258: URBANE PRAXIS',
-        details: 'You can find our competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024. <br>Keywords: Adaptive Reuse. Video. Participative design'
-    },
-  {
-        image: 'images/12.png',
-        number: 'H67B: TROMBE HOUSE',
-        details: 'Design for a 100 sqm. house. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Trombe-Wall. Legalparameters.'
-    },
-       {
-        image: 'images/13.png',
-        number: 'H69B: BAY HOUSE',
-        details: 'Design for a 110 sqm. house. A thermally activated earth wall and two pods, V Region, Chile, 2025 - ongoing. <br>Keywords: Rammed earth. Timber. Water reuse.'
-    },
-
+        number: '036: NEIGHBOURS',
+        details: 'Specific transformation of a series of apartments, Zurich, 2020'
+    }
 ];
+
+// 🔑 New function to shuffle an array (using the standard Fisher-Yates algorithm)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        // Swap elements array[i] and array[j]
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// 🔑 Shuffle the projects array immediately after definition
+shuffleArray(projects);
 
 let currentProjectIndex = 0;
 
