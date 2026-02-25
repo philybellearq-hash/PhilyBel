@@ -41,6 +41,11 @@ const projects = [
         number: 'H69A: A HANGAR IN THE WOODS',
         details: 'Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection.'
     },
+     {
+        image: 'images/16.jpg',
+        number: 'H69A: A HANGAR IN THE WOODS',
+        details: 'Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection.'
+    },
     {
         image: 'images/7.gif',
         number: 'M1: KULTURWERKSTATT EUROPA',
