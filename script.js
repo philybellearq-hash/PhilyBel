@@ -1,12 +1,12 @@
 
 // Data for 10 placeholder images and their descriptions
 const projects = [
-   {
+     {
         image: 'images/15.jpg',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
-       {
+    {
         image: 'images/4.png',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
@@ -35,11 +35,6 @@ const projects = [
         image: 'images/4.png',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
-    },
-    {
-        image: 'images/5.jpg',
-        number: 'D42: MILLER',
-        details: 'Refurbishment of a 60 sqm apartment, built, Santiago, 2017 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
         image: 'images/6.jpg',
