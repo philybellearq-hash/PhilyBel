@@ -32,17 +32,12 @@ const projects = [
         details: 'Refurbishment of a 80 sqm apartment, built, Santiago, 2022 <br>Keywords: Minimal intervention. Low-cost strategies'
     },
     {
-        image: 'images/4.png',
-        number: 'H68: WAVY',
-        details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
-    },
-    {
-        image: 'images/6.jpg',
+        image: 'images/16.jpg',
         number: 'H69A: A HANGAR IN THE WOODS',
         details: 'Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection.'
     },
      {
-        image: 'images/16.jpg',
+        image: 'images/6.jpg',
         number: 'H69A: A HANGAR IN THE WOODS',
         details: 'Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing. <br>Keywords: Readymades. Prefab. Thermic convection.'
     },
