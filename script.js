@@ -7,7 +7,7 @@ const projects = [
         details: 'Design for a 140 sqm timber frame house, V Region, Chile, 2025 - ongoing. <br>Keywords: Rigid frame. Design through regulation.'
     },
        {
-        image: 'images/15.png',
+        image: 'images/15.jpg',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
