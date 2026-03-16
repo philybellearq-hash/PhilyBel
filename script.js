@@ -2,7 +2,12 @@
 // Data for 10 placeholder images and their descriptions
 const projects = [
      {
-        image: 'images/15.jpg',
+        image: 'images/17.jpg',
+        number: 'H67B: CLIP',
+        details: 'Design for a 140 sqm timber frame house, V Region, Chile, 2025 - ongoing. <br>Keywords: Rigid frame. Design through regulation.'
+    },
+       {
+        image: 'images/15.png',
         number: 'H68: WAVY',
         details: 'Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass'
     },
