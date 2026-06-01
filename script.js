@@ -6,7 +6,8 @@ const projects = [
         number: 'H67B: CLIP',
         details: 'Design for a 140 sqm timber frame house, V Region, Chile, 2025 - ongoing. <br>Keywords: Rigid frame. Design through regulation.'
     },
-           image: 'images/18.jpg',
+       { 
+            image: 'images/18.jpg',
         number: 'H62: FESTZELT',
         details: 'Design for a 140 sqm off-grid timber house, V Region, Chile, 2025 - ongoing. <br>Keywords: Climate buffer. Structure. Wood. Circular construction. Water'
 },
