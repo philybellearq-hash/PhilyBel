@@ -214,6 +214,13 @@ body.about-page span {
 
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
+.about__photo {
+    width: 100%;
+    max-width: 280px;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
 .about__content {
     display: flex; 
     gap: 80px; 
