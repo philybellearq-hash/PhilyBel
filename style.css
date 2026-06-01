@@ -218,7 +218,6 @@ css.about__contact {
     flex: 0 0 300px; 
     display: flex;
     flex-direction: column;
-    max-width: 300px;
 }
 
 .about__photo {
