@@ -60,7 +60,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     height: 100%; 
     max-width: var(--max-content-width);
     margin: 0 auto;
-    /* CRITICAL FIX: Hide overflow ONLY on the home grid to enforce no-scroll */
     overflow-y: hidden; 
 }
 
@@ -116,7 +115,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     max-height: 100%; 
 }
 
-/* DESKTOP/DEFAULT IMAGE SIZE (Max 600px) */
 .slide__img {
     width: 100%; 
     display: flex;
@@ -124,8 +122,6 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     flex-shrink: 1; 
     height: 100%; 
     min-height: 0;
-    
-    /* Fixed Maximum Size for Image Container (desktop) */
     max-width: 600px; 
     max-height: 600px; 
 }
@@ -133,20 +129,15 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
 .slide__img img {
     display: block;
     object-fit: contain;
-
-    /* Fixed Maximum Size for the Image itself (desktop) */
     max-height: 600px; 
     max-width: 600px; 
     height: auto; 
     width: auto; 
-    
     min-height: 0; 
     flex-shrink: 1;
-    
     margin-bottom: 20px; 
 }
 
-/* Project Text Description */
 .slide__txt {
     width: 80%; 
     max-width: 700px;
@@ -171,7 +162,7 @@ a, p, h1, h2, h3, div, span, .studio-title, .project-number, .highlight {
     padding: 0; 
     cursor: pointer;
     font-size: 3em; 
-    color: var(--arrow-color); /* Yellow */
+    color: var(--arrow-color);
     opacity: 0.8; 
     transition: opacity 0.2s;
     z-index: 99; 
@@ -214,17 +205,28 @@ body.about-page span {
 
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
-css.about__contact {
-    flex: 0 0 300px; 
-    display: flex;
-    flex-direction: column;
+.about__content {
+    display: flex !important; 
+    flex-direction: row !important;
+    gap: 80px; 
+    padding-bottom: 50px;
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding-top: 50px; 
+}
+
+.about__contact {
+    flex: 0 0 300px;
+    width: 300px;
+    display: flex !important;
+    flex-direction: column !important;
 }
 
 .about__photo {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     height: auto;
-    display: block;
+    display: block !important;
     margin-bottom: 1.5rem;
 }
 
@@ -238,7 +240,7 @@ css.about__contact {
 
 /* Projects List (Right Column) */
 .projects-list-section {
-    flex-grow: 1;
+    flex: 1 1 auto;
     max-width: 800px; 
 }
 
@@ -258,41 +260,35 @@ css.about__contact {
 .highlight { font-style: italic; }
 
 /* ======================================================= */
-/* 🔑 MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX) - FINAL FIX */
+/* MOBILE SPECIFIC FIXES (MAX-WIDTH: 768PX)                */
 /* ======================================================= */
 
 @media (max-width: 768px) {
     
-    /* 1. Aggressively adjust Padding and arrows on small screens */
     body {
-        padding: 10px; /* Reduce padding to an absolute minimum */
+        padding: 10px;
     }
-    .slider__prev { left: 10px; } /* Adjust arrows to stick to the new padding */
+    .slider__prev { left: 10px; }
     .slider__next { right: 10px; }
     
-    /* 2. Smaller Image Size for Mobile using viewport width calculation */
     .slide__img, .slide__img img {
-        /* CRITICAL: Force the max-width to be the screen size minus the padding (10px left + 10px right = 20px) */
         max-width: calc(100vw - 20px) !important; 
-        /* Ensure the image doesn't overflow its vertical container */
         max-height: 80vh !important;
-        /* Remove the fixed height for mobile and let it be determined by the width constraint */
         height: auto !important; 
         width: 100% !important;
     }
     
-    /* 3. About Page Layout for Mobile (single column) */
     .about__content {
-        flex-direction: column; 
+        flex-direction: column !important; 
         gap: 40px;
     }
     .about__contact {
-        flex: auto; 
-        max-width: 100%;
+        flex: auto !important;
+        width: 100% !important;
     }
     .about__photo {
-    max-width: 100%;
-}
+        max-width: 100%;
+    }
     .projects-list-section {
         max-width: 100%;
     }
