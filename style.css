@@ -214,26 +214,19 @@ body.about-page span {
 
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
-.about__photo {
-    width: 100%;
-    max-width: 280px;
-    display: block;
-    margin-bottom: 1.5rem;
-}
-
-.about__content {
-    display: flex; 
-    gap: 80px; 
-    padding-bottom: 50px;
-    max-width: 1000px; 
-    margin: 0 auto; 
-    padding-top: 50px; 
-}
-
-.about__contact {
+css.about__contact {
     flex: 0 0 300px; 
     display: flex;
     flex-direction: column;
+    max-width: 300px;
+}
+
+.about__photo {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin-bottom: 1.5rem;
 }
 
 .studio-title { font-size: 1.2em; margin-bottom: 5px; }
@@ -298,6 +291,9 @@ body.about-page span {
         flex: auto; 
         max-width: 100%;
     }
+    .about__photo {
+    max-width: 100%;
+}
     .projects-list-section {
         max-width: 100%;
     }
