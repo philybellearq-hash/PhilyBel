@@ -2,42 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHILYBEL | Projects</title>
     <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── MASONRY GRID PAGE ── */
+
+     body.projects-page {
+    background-color: #fff;
+    overflow-y: auto;
+    padding: 60px;
+}
+
+        body.projects-page a,
+        body.projects-page p,
+        body.projects-page h1,
+        body.projects-page h2,
+        body.projects-page h3,
+        body.projects-page div,
+        body.projects-page span {
+            color: var(--text-color) !important;
+        }
+
+        .projects-page .home__grid {
+            overflow-y: visible;
+            height: auto;
+        }
+
+        /* NAV */
+        .projects-nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+        /* MASONRY */
+        .masonry-grid {
+            columns: 3;
+            column-gap: 60px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 60px;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            background: #e8e8e8;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.2s ease;
+        }
+
+        .masonry-item:hover img {
+            opacity: 0.85;
+        }
+
+        .masonry-item .item-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 6px 8px;
+            font-family: var(--font-family) !important;
+            font-size: 0.7em;
+            color: #000 !important;
+            background: rgba(255,255,255,0.85);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            line-height: 1.3;
+        }
+
+        .masonry-item:hover .item-label {
+            opacity: 1;
+        }
+
+        /* placeholder tiles (no image yet) */
+        .masonry-item.placeholder {
+            background: #e8e8e8;
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+                column-gap: 20px;
+            }
+            .masonry-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
-<body class="overlay__inactive">
-    
+<body class="projects-page">
     <div class="home__grid">
-        <header class="home__header">
+
+        <nav class="projects-nav">
             <h1 class="title_link"><a href="about.html">PHILYBEL</a></h1>
-        </header>
+        </nav>
 
-        <div class="home__slider">
-            <div class="slider__container">
-                <div class="slider__wrapper">
-                    <div class="slider__slide active">
-                        
-                        <div class="slide__img">
-                            <img id="project-image" src="images/1.jpg" alt="Project Image" class="lazy-loaded">
-                        </div>
-                        
-                        <div class="slide__txt">
-                            <p id="project-details">
-                                H62: FESTZELT<br />
-                                Design for a 140 sqm coastal 
-                            </p>
-                        </div>
-                    </div>
+        <div class="masonry-grid" id="masonryGrid">
+            <!--
+                HOW TO ADD YOUR IMAGES:
+                Replace the placeholder divs below with:
+
+                <div class="masonry-item">
+                    <img src="images/your-photo.jpg" alt="Project name">
+                    <div class="item-label">PROJECT NAME / YEAR</div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <button class="slider__prev" onclick="navigateSlide(-1)"></button>
-    <button class="slider__next" onclick="navigateSlide(1)"></button>
 
-    <script src="script.js"></script>
+                Images can be any aspect ratio — portrait, landscape, square.
+                Mix them freely; the masonry layout handles it automatically.
+                The label appears on hover.
+            -->
+
+            <!-- PLACEHOLDER TILES — delete these as you add real images -->
+            <div class="1.jpg" style="padding-bottom: 133%;"></div>
+            <div class="4.jpg" style="padding-bottom: 75%;"></div>
+            <div class="19.jpg" style="padding-bottom: 100%;"></div>
+            <div class="18.jpg" style="padding-bottom: 60%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 120%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 80%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 66%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 140%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 75%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 90%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 110%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 70%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 55%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 125%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 80%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 66%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 150%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 75%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 90%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 60%;"></div>
+            <div class="masonry-item placeholder" style="padding-bottom: 110%;"></div>
+        </div>
+
+    </div>
 </body>
 </html>
