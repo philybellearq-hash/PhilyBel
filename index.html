@@ -51,7 +51,7 @@
             opacity: 0.5;
         }
 
-        /* A LA CARTE image */
+        /* A LA CARTE images */
         .alacarte-img {
             position: fixed;
             bottom: 60px;
@@ -64,6 +64,10 @@
 
         .alacarte-img.visible {
             display: block;
+        }
+
+        .alacarte-img-second {
+            right: 440px;
         }
 
         /* MASONRY */
@@ -141,9 +145,12 @@
                 padding: 10px;
             }
             .alacarte-img {
-                width: 200px;
+                width: 160px;
                 bottom: 20px;
                 right: 20px;
+            }
+            .alacarte-img-second {
+                right: 200px;
             }
         }
     </style>
@@ -156,7 +163,8 @@
             <span class="alacarte-toggle" onclick="toggleALaCarte()">A LA CARTE</span>
         </nav>
 
-       <img src="images/666.jpg" id="alacarteImg" class="alacarte-img" alt="A La Carte">
+        <img src="images/666.jpg" id="alacarteImg" class="alacarte-img" alt="A La Carte">
+        <img src="images/665.jpg" id="alacarteImg2" class="alacarte-img alacarte-img-second" alt="A La Carte 2">
 
         <div class="masonry-grid" id="masonryGrid">
 
@@ -244,15 +252,7 @@
                 <img src="images/8.jpg" alt="D42: MILLER">
                 <div class="item-label">
                     <span class="item-number">D42: MILLER</span>
-                    <span class="item-details">Refurbishment of a 60 sqm apartment, built, Santiago, 2017.<br>Keywords: Minimal intervention. Circularity. Low-cost strategies</span>
-                </div>
-            </div>
-
-              <div class="masonry-item">
-                <img src="images/101.jpg" alt="D42: MILLER">
-                <div class="item-label">
-                    <span class="item-number">D42: MILLER</span>
-                    <span class="item-details">Refurbishment of a 60 sqm apartment, built, Santiago, 2017.<br>Keywords: Minimal intervention. Circularity. Low-cost strategies</span>
+                    <span class="item-details">Refurbishment of a 60 sqm apartment, built, Santiago, 2017.<br>Keywords: Minimal intervention. Low-cost strategies</span>
                 </div>
             </div>
 
@@ -303,6 +303,7 @@
         // A LA CARTE toggle
         function toggleALaCarte() {
             document.getElementById('alacarteImg').classList.toggle('visible');
+            document.getElementById('alacarteImg2').classList.toggle('visible');
         }
 
         // Shuffle masonry grid on load
