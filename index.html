@@ -33,9 +33,37 @@
         /* NAV */
         .projects-nav {
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: flex-start;
             padding-bottom: 30px;
+        }
+
+        .alacarte-toggle {
+            cursor: pointer;
+            font-family: var(--font-family) !important;
+            font-size: 1.2em;
+            color: var(--text-color) !important;
+            font-weight: 400 !important;
+            user-select: none;
+        }
+
+        .alacarte-toggle:hover {
+            opacity: 0.5;
+        }
+
+        /* A LA CARTE image */
+        .alacarte-img {
+            position: fixed;
+            bottom: 60px;
+            right: 60px;
+            width: 320px;
+            display: none;
+            z-index: 100;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .alacarte-img.visible {
+            display: block;
         }
 
         /* MASONRY */
@@ -112,6 +140,11 @@
                 font-size: 0.7em;
                 padding: 10px;
             }
+            .alacarte-img {
+                width: 200px;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -120,17 +153,12 @@
 
         <nav class="projects-nav">
             <h1 class="title_link"><a href="about.html">PHILYBEL</a></h1>
-
-            <nav class="projects-nav">
-    <h1 class="title_link"><a href="about.html">PHILYBEL</a></h1>
-    <span class="alacarte-toggle" onclick="toggleALaCarte()">A LA CARTE</span>
-</nav>
-            
+            <span class="alacarte-toggle" onclick="toggleALaCarte()">A LA CARTE</span>
         </nav>
 
-        <img src="images/000.jpg" id="alacarteImg" class="alacarte-img">
+        <img src="images/100.jpg" id="alacarteImg" class="alacarte-img" alt="A La Carte">
 
-        <div class="masonry-grid">
+        <div class="masonry-grid" id="masonryGrid">
 
             <div class="masonry-item">
                 <img src="images/17.jpg" alt="H67B: CLIP">
@@ -262,11 +290,19 @@
 
         </div>
     </div>
+
     <script>
-    const grid = document.querySelector('.masonry-grid');
-    const items = Array.from(grid.children);
-    items.sort(() => Math.random() - 0.5);
-    items.forEach(item => grid.appendChild(item));
-</script>
+        // A LA CARTE toggle
+        function toggleALaCarte() {
+            document.getElementById('alacarteImg').classList.toggle('visible');
+        }
+
+        // Shuffle masonry grid on load
+        const grid = document.getElementById('masonryGrid');
+        const items = Array.from(grid.children);
+        items.sort(() => Math.random() - 0.5);
+        items.forEach(item => grid.appendChild(item));
+    </script>
+
 </body>
 </html>
