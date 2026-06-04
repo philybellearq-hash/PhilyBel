@@ -203,6 +203,30 @@ body.about-page span {
     color: var(--dark-text) !important;
 }
 
+.alacarte-toggle {
+    cursor: pointer;
+    font-family: var(--font-family) !important;
+    font-size: 1em;
+    color: var(--text-color) !important;
+}
+
+.alacarte-toggle:hover {
+    opacity: 0.5;
+}
+
+.alacarte-img {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    width: 320px;
+    display: none;
+    z-index: 100;
+}
+
+.alacarte-img.visible {
+    display: block;
+}
+
 /* --- ABOUT.HTML: CONTACT/LIST LAYOUT --- */
 
 .about__content {
