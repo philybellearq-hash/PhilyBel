@@ -9,11 +9,11 @@
     <style>
         /* ── MASONRY GRID PAGE ── */
 
-     body.projects-page {
-    background-color: #fff;
-    overflow-y: auto;
-    padding: 60px;
-}
+        body.projects-page {
+            background-color: #fff;
+            overflow-y: auto;
+            padding: 60px;
+        }
 
         body.projects-page a,
         body.projects-page p,
@@ -35,7 +35,6 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            padding-top: 10px;
             padding-bottom: 30px;
         }
 
@@ -58,44 +57,60 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.25s ease;
         }
 
         .masonry-item:hover img {
-            opacity: 0.85;
+            opacity: 0.15;
         }
 
         .masonry-item .item-label {
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            padding: 6px 8px;
+            bottom: 0;
+            padding: 16px;
             font-family: var(--font-family) !important;
-            font-size: 0.7em;
+            font-size: 0.85em;
             color: #000 !important;
-            background: rgba(255,255,255,0.85);
+            background: transparent;
             opacity: 0;
-            transition: opacity 0.2s ease;
-            line-height: 1.3;
+            transition: opacity 0.25s ease;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .masonry-item:hover .item-label {
             opacity: 1;
         }
 
-        /* placeholder tiles (no image yet) */
-        .masonry-item.placeholder {
-            background: #e8e8e8;
+        .item-label .item-number {
+            font-weight: 700 !important;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .item-label .item-details {
+            font-weight: 400 !important;
         }
 
         @media (max-width: 768px) {
+            body.projects-page {
+                padding: 20px;
+            }
             .masonry-grid {
                 columns: 2;
                 column-gap: 20px;
             }
             .masonry-item {
                 margin-bottom: 20px;
+            }
+            .masonry-item .item-label {
+                font-size: 0.7em;
+                padding: 10px;
             }
         }
     </style>
@@ -107,48 +122,137 @@
             <h1 class="title_link"><a href="about.html">PHILYBEL</a></h1>
         </nav>
 
-        <div class="masonry-grid" id="masonryGrid">
-            <!--
-                HOW TO ADD YOUR IMAGES:
-                Replace the placeholder divs below with:
+        <div class="masonry-grid">
 
-                <div class="masonry-item">
-                    <img src="images/your-photo.jpg" alt="Project name">
-                    <div class="item-label">PROJECT NAME / YEAR</div>
+            <div class="masonry-item">
+                <img src="images/17.jpg" alt="H67B: CLIP">
+                <div class="item-label">
+                    <span class="item-number">H67B: CLIP</span>
+                    <span class="item-details">Design for a 140 sqm timber frame house, V Region, Chile, 2025 - ongoing.<br>Keywords: Rigid frame. Design through regulation.</span>
                 </div>
+            </div>
 
-                Images can be any aspect ratio — portrait, landscape, square.
-                Mix them freely; the masonry layout handles it automatically.
-                The label appears on hover.
-            -->
+            <div class="masonry-item">
+                <img src="images/18.jpg" alt="H62: FESTZELT">
+                <div class="item-label">
+                    <span class="item-number">H62: FESTZELT</span>
+                    <span class="item-details">Design for a 140 sqm off-grid timber house, V Region, Chile, 2025 - ongoing.<br>Keywords: Climate buffer. Structure. Wood. Circular construction. Water</span>
+                </div>
+            </div>
 
-            <!-- PLACEHOLDER TILES — delete these as you add real images -->
-            <div class="1.jpg" style="padding-bottom: 133%;"></div>
-            <div class="4.jpg" style="padding-bottom: 75%;"></div>
-            <div class="19.jpg" style="padding-bottom: 100%;"></div>
-            <div class="18.jpg" style="padding-bottom: 60%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 120%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 80%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 66%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 140%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 75%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 90%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 110%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 70%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 55%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 125%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 80%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 100%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 66%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 150%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 75%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 90%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 60%;"></div>
-            <div class="masonry-item placeholder" style="padding-bottom: 110%;"></div>
+            <div class="masonry-item">
+                <img src="images/19.jpg" alt="H62: FESTZELT">
+                <div class="item-label">
+                    <span class="item-number">H62: FESTZELT</span>
+                    <span class="item-details">Design for a 140 sqm off-grid timber house, V Region, Chile, 2025 - ongoing.<br>Keywords: Climate buffer. Wood. Structure. Circular construction. Water</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/15.jpg" alt="H68: WAVY">
+                <div class="item-label">
+                    <span class="item-number">H68: WAVY</span>
+                    <span class="item-details">Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing.<br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/4.png" alt="H68: WAVY">
+                <div class="item-label">
+                    <span class="item-number">H68: WAVY</span>
+                    <span class="item-details">Design for a 140 sqm adaptable timber house, V Region, Chile, 2025 - ongoing.<br>Keywords: CLT. Future adaptability. Circular construction. Radiation + thermal mass</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/2.gif" alt="BCN: BIODIVERSITY HUBS">
+                <div class="item-label">
+                    <span class="item-number">BCN: BIODIVERSITY HUBS</span>
+                    <span class="item-details">Competition entry for the thermal enhancement of Partywalls in Barcelona, 2024, in collaboration with FHAO and Sebastian Delgado.<br>Keywords: Trombe-Wall. Transspecies. Biodiversity. Adaptive Reuse</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/3.png" alt="D32: INFANTE">
+                <div class="item-label">
+                    <span class="item-number">D32: INFANTE</span>
+                    <span class="item-details">Refurbishment of a 80 sqm apartment, built, Santiago, 2022.<br>Keywords: Minimal intervention. Low-cost strategies</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/16.jpg" alt="H69A: A HANGAR IN THE WOODS">
+                <div class="item-label">
+                    <span class="item-number">H69A: A HANGAR IN THE WOODS</span>
+                    <span class="item-details">Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing.<br>Keywords: Readymades. Prefab. Thermic convection.</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/6.jpg" alt="H69A: A HANGAR IN THE WOODS">
+                <div class="item-label">
+                    <span class="item-number">H69A: A HANGAR IN THE WOODS</span>
+                    <span class="item-details">Design for a 140 sqm steel frame house using a hangar construction system, V Region, Chile, 2025 - ongoing.<br>Keywords: Readymades. Prefab. Thermic convection.</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/7.gif" alt="M1: KULTURWERKSTATT EUROPA">
+                <div class="item-label">
+                    <span class="item-number">M1: KULTURWERKSTATT EUROPA</span>
+                    <span class="item-details">Master thesis, design for a culture and language hub in Aachen, KIT, Prof. M. Morger, 2018.<br>Keywords: Building in context. Positive/Negative</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/8.jpg" alt="D42: MILLER">
+                <div class="item-label">
+                    <span class="item-number">D42: MILLER</span>
+                    <span class="item-details">Refurbishment of a 60 sqm apartment, built, Santiago, 2017.<br>Keywords: Minimal intervention. Low-cost strategies</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/9.jpg" alt="M2: SUNSET BLVD">
+                <div class="item-label">
+                    <span class="item-number">M2: SUNSET BLVD</span>
+                    <span class="item-details">Master thesis, design for an affordable housing mixed-use megastructure, KIT, Prof. M. Frohn, 2018.<br>Keywords: Design through filmtheory. Flexible Floorplans. Future adaptability</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/10.jpg" alt="M3: OPEN CODES">
+                <div class="item-label">
+                    <span class="item-number">M3: OPEN CODES</span>
+                    <span class="item-details">Design entry for an exhibition at ZKM Karlsruhe curated by Peter Weibel, KIT, Prof. M. Frohn, 2018, in collaboration with Juan Manuel Salgado.<br>Keywords: Concept through translation. Grid. Virtual space</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/11.png" alt="ARCH+258: URBANE PRAXIS">
+                <div class="item-label">
+                    <span class="item-number">ARCH+258: URBANE PRAXIS</span>
+                    <span class="item-details">Competition entry for Abbrechen, Abbrechen published here, in collaboration with FHAO and Studio RAPIET, 2024.<br>Keywords: Adaptive Reuse. Video. Participative design</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/12.png" alt="H67B: TROMBE HOUSE">
+                <div class="item-label">
+                    <span class="item-number">H67B: TROMBE HOUSE</span>
+                    <span class="item-details">Design for a 100 sqm. house. A shape conditioned by legal zoning, V Region, Chile, 2025 - ongoing.<br>Keywords: Readymades. Trombe-Wall. Legal parameters.</span>
+                </div>
+            </div>
+
+            <div class="masonry-item">
+                <img src="images/13.png" alt="H69B: BAY HOUSE">
+                <div class="item-label">
+                    <span class="item-number">H69B: BAY HOUSE</span>
+                    <span class="item-details">Design for a 110 sqm. house. A thermally activated earth wall and two pods, V Region, Chile, 2025 - ongoing.<br>Keywords: Rammed earth. Timber. Water reuse.</span>
+                </div>
+            </div>
+
         </div>
-
     </div>
 </body>
 </html>
