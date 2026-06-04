@@ -112,8 +112,4 @@ function navigateSlide(direction) {
 document.addEventListener('DOMContentLoaded', () => {
     // NOTE: This assumes 'images/1.jpg' to 'images/10.jpg' exist in your folder structure.
     updateProjectDisplay();
-}
-                         function toggleALaCarte() {
-    document.getElementById('alacarteImg').classList.toggle('visible');
-}
-);
+});
